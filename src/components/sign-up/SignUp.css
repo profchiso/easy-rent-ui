@@ -89,3 +89,7 @@
 .my-facebook-button-class:active {
 	outline: 0;
 }
+.ant-divider {
+	padding: 0;
+	margin: 5px 0 !important;
+}
