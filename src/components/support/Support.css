@@ -4,8 +4,21 @@
 .subject-input {
 	width: 100%;
 }
+.phone-contact {
+	text-align: right;
+	color: #a8eb12;
+}
+.phone-icon {
+	padding-right: 5px;
+}
+.phone-number {
+	color: #a8eb12 !important;
+}
 @media screen and (max-width: 768px) {
 	.support-column {
 		margin-bottom: 1rem;
+	}
+	.mobile-seperator {
+		margin: 0;
 	}
 }

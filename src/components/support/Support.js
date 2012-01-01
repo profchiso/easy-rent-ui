@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 //components
 import { Typography, Form, Row, Col, Input, Button } from 'antd';
 import logo from '../../img/rental.png';
-import { MailOutlined, UserOutlined } from '@ant-design/icons';
+import { MailOutlined, UserOutlined, PhoneOutlined } from '@ant-design/icons';
 import Footer from '../common/Footer/Footer';
 
 //styles
@@ -30,7 +30,7 @@ const Support = () => {
 						<span className='rent-color'>RENT</span>
 					</h1>
 				</div>
-				<div className='row-separator'>
+				<div className='row-separator mobile-seperator'>
 					<Title level={3}>Having any issue whatsoever?</Title>
 					<Text strong className='heading'>
 						Get in touch with our support team
@@ -127,6 +127,12 @@ const Support = () => {
 							Send
 						</Button>
 					</div>
+				</div>
+				<div className='row-separator phone-contact'>
+					<PhoneOutlined className='phone-icon' />
+					<a href='tel:08036009397' className='phone-number'>
+						08036009397
+					</a>
 				</div>
 				<div className='row-separator'>
 					<Footer />
