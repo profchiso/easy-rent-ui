@@ -1,0 +1,11 @@
+.row-separator {
+	margin: 1rem 0;
+}
+.subject-input {
+	width: 100%;
+}
+@media screen and (max-width: 768px) {
+	.support-column {
+		margin-bottom: 1rem;
+	}
+}
