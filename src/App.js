@@ -11,6 +11,7 @@ import Dashboard from './components/private/dashboard/Dashboard';
 import Appartments from './components/appartments/Appartment';
 import SignUp from './components/sign-up/SignUp';
 import Support from './components/support/Support';
+import Pricing from './components/pricing/Pricing';
 import store from './store';
 
 //styles
@@ -29,6 +30,7 @@ const App = () => {
 					<Route exact path='/appartments' component={Appartments} />
 					<Route exact path='/sign-up' component={SignUp} />
 					<Route exact path='/support' component={Support} />
+					<Route exact path='/pricing' component={Pricing} />
 				</Switch>
 			</Router>
 		</Provider>

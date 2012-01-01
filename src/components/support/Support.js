@@ -130,7 +130,7 @@ const Support = () => {
 				</div>
 				<div className='row-separator phone-contact'>
 					<PhoneOutlined className='phone-icon' />
-					<a href='tel:08036009397' className='phone-number'>
+					<a href='tel:+2348036009397' className='phone-number'>
 						08036009397
 					</a>
 				</div>
