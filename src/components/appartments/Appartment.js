@@ -21,11 +21,12 @@ const { Option } = Select;
 
  const Appartment = () => {
     const [drawerVisible,setDrawerVisible]= useState(false)
-    const [selectedState,setSelectedState] = useState()
-    const [selectedLGA, setSelectedLGA] =useState("")
+    const [selectedState,setSelectedState] = useState("abia")
+    const [selectedLGA, setSelectedLGA] =useState()
     const NIGERIA_STATES=NaijaStates.states()
-    let SELECTED_STATE_LGA =[]
+    // let SELECTED_STATE_LGA ={}
     // console.log(SELECTED_STATE_LGA)
+   
 
     const showDrawer=()=>{
         setDrawerVisible(!drawerVisible)
@@ -34,17 +35,19 @@ const { Option } = Select;
         setDrawerVisible(false)
     }
     const onStateChange = value => {
-        // setSelectedState(value)
-        // SELECTED_STATE_LGA=NaijaStates.lgas(value)
         if(value!=="" && value!==undefined ){
-            SELECTED_STATE_LGA =   NaijaStates.lgas(value)
+            setSelectedState(value)
+            // SELECTED_STATE_LGA =   NaijaStates.lgas(value)
+            // console.log(SELECTED_STATE_LGA)
+            
         }
-     
-        console.log(value)
        };
      const  onLGAChange = value=>{
-        // setSelectedLGA(value)
-        console.log(value)
+        if(value!=="" && value!==undefined ){
+             setSelectedLGA(value)
+             console.log(selectedLGA)
+        }
+        
      }
  
        const onChange=(value)=> {
@@ -107,11 +110,11 @@ const { Option } = Select;
                                                         style={{borderRadius:"20px",width:"100%"}}
                                                         
                                                     >
-                                                        {/* {SELECTED_STATE_LGA.lgas.map((selectedStateLGAs)=>{
+                                                         {(selectedState!=="" || selectedState!==undefined) &&  NaijaStates.lgas(selectedState).lgas.map((selectedStateLGAs)=>{
                                                         return(
                                                             <Option key={selectedStateLGAs} value={selectedStateLGAs}>{selectedStateLGAs}</Option>
                                                         )
-                                                        })} */}
+                                                        })} 
                                                      </Select>
                                                         <h4 className="filter-title">LGA</h4>
                                                     </div>
@@ -216,11 +219,11 @@ const { Option } = Select;
                                                         style={{borderRadius:"20px",width:"100%"}}
                                                         
                                                     >
-                                                        {/* {SELECTED_STATE_LGA.lgas.map((selectedStateLGAs)=>{
+                                                        {(selectedState!=="" || selectedState!==undefined) &&  NaijaStates.lgas(selectedState).lgas.map((selectedStateLGAs)=>{
                                                         return(
                                                             <Option key={selectedStateLGAs} value={selectedStateLGAs}>{selectedStateLGAs}</Option>
                                                         )
-                                                        })} */}
+                                                        })} 
                                                      </Select>
                                                         <h4 className="filter-title">LGA</h4>
                                                     </div>
