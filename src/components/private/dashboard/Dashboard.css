@@ -1,0 +1,78 @@
+.ant-menu{
+    background: none;
+    width: auto;
+    color: #333;
+}
+.ant-menu-inline{
+    border-right: none;
+}
+.ant-menu-submenu .ant-menu-sub{
+    background: none;
+}
+.ant-menu-item-selected{
+    color: #333;
+    background-color: #A8EB12;
+    
+}
+.ant-menu-item-active{
+    color: #333;
+    background-color: #A8EB12;
+    
+}
+.ant-menu-item-active:hover{
+    color: #333;
+    background-color: #A8EB12;
+    border-color: #333;
+    border-radius: 10px 0 0 10px;
+    border-right: 3px solid #333;
+    
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+    color: #333;
+    background-color: #A8EB12;
+    border-radius: 10px 0 0 10px;
+
+}
+.ant-menu-item ant-menu-item-only-child ant-menu-item-active ant-menu-item-selected{
+    border-color: #333;
+}
+.ant-menu-submenu-title{
+    color: #333;
+}
+.ant-menu-submenu-title:active{
+    color: #333;
+}
+.ant-menu-inline .ant-menu-item::after{
+    border-color: #333;
+}
+.ant-menu-inline .ant-menu-item:hover{
+    border-color: #333; 
+}
+.actions{
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+   justify-content: space-around;
+   background-color: rgba(0,0,0, 0.05);
+   border-radius: 10px;
+   margin-top: 10px;
+}
+.center{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}
+@media screen and (max-width: 768px) {
+.card-listing{
+    padding-bottom: 40px;
+}
+.center{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+}
