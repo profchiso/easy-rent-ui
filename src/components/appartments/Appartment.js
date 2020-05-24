@@ -9,6 +9,7 @@ import { Row,Col,Affix ,Card ,	Drawer,Button,Select,Slider} from 'antd';
 import {EnvironmentOutlined,DollarOutlined,PhoneOutlined,HomeOutlined,MenuOutlined ,CloseOutlined} from '@ant-design/icons'
 import house1 from "../../img/house1.jpg"
 import house2 from "../../img/house2.jpeg"
+import Footer from "../common/Footer/Footer"
 
 //styles
 import "./Appartment.css"
@@ -24,8 +25,7 @@ const { Option } = Select;
     const [selectedState,setSelectedState] = useState("abia")
     const [selectedLGA, setSelectedLGA] =useState()
     const NIGERIA_STATES=NaijaStates.states()
-    // let SELECTED_STATE_LGA ={}
-    // console.log(SELECTED_STATE_LGA)
+    
    
 
     const showDrawer=()=>{
@@ -37,9 +37,6 @@ const { Option } = Select;
     const onStateChange = value => {
         if(value!=="" && value!==undefined ){
             setSelectedState(value)
-            // SELECTED_STATE_LGA =   NaijaStates.lgas(value)
-            // console.log(SELECTED_STATE_LGA)
-            
         }
        };
      const  onLGAChange = value=>{
@@ -398,6 +395,9 @@ const { Option } = Select;
                             </div> 
                             
                         </Card>
+                    </div>
+                    <div className="footer-div">
+                        <Footer/>
                     </div>
                 </Col>
             </Row>

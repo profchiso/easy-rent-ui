@@ -82,6 +82,9 @@ border-radius: 10px;
 .mobile-menu{
     display: none;
 }
+.footer-div{
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .filter-pane{
         height: auto; 
@@ -134,6 +137,9 @@ border-radius: 10px;
     
     .filter-on-big-screen{
         display: none;
+    }
+    .footer-div{
+        display: block;
     }
 }
 
