@@ -21,11 +21,11 @@ const { Option } = Select;
 
  const Appartment = () => {
     const [drawerVisible,setDrawerVisible]= useState(false)
-    const [selectedState,setSelectedState] = useState("abia")
+    const [selectedState,setSelectedState] = useState()
     const [selectedLGA, setSelectedLGA] =useState("")
     const NIGERIA_STATES=NaijaStates.states()
-    let SELECTED_STATE_LGA =NaijaStates.lgas(selectedState)
-    console.log(SELECTED_STATE_LGA)
+    let SELECTED_STATE_LGA =[]
+    // console.log(SELECTED_STATE_LGA)
 
     const showDrawer=()=>{
         setDrawerVisible(!drawerVisible)
@@ -34,13 +34,17 @@ const { Option } = Select;
         setDrawerVisible(false)
     }
     const onStateChange = value => {
-        setSelectedState(value)
-        SELECTED_STATE_LGA=NaijaStates.lgas(value)
-        console.log(selectedState)
+        // setSelectedState(value)
+        // SELECTED_STATE_LGA=NaijaStates.lgas(value)
+        if(value!=="" && value!==undefined ){
+            SELECTED_STATE_LGA =   NaijaStates.lgas(value)
+        }
+     
+        console.log(value)
        };
      const  onLGAChange = value=>{
-        setSelectedLGA(value)
-        console.log(selectedLGA)
+        // setSelectedLGA(value)
+        console.log(value)
      }
  
        const onChange=(value)=> {
@@ -49,6 +53,9 @@ const { Option } = Select;
  
        const onAfterChange=(value)=> {
          console.log('onAfterChange: ', value);
+       }
+       const onHouseTypeChange=value=>{
+           console.log(value)
        }
     return (
         <div>
@@ -66,14 +73,7 @@ const { Option } = Select;
                             </Link>
                         </div>
                                         <div className="drawer-container filter-on-big-screen">
-                                            {/* <div className="drawer-header filter-drawer-header">
-                                                <Link to="/">
-                                                <h1 className="easy-rent-text  easy-rent-text-mobile">
-                                                    easy
-                                                    <span className="rent-color">RENT</span>
-                                                </h1>
-                                                </Link>
-                                            </div> */}
+                                           
                                             <div className="sign-up-card-rappers filter-pane-box">
                                                 <div className="sign-up-container ">
                                                     <div><h3>Customize your search</h3></div>
@@ -81,9 +81,11 @@ const { Option } = Select;
                                                     <Select
                                                         placeholder="Select state"
                                                         onChange={onStateChange}
-                                                        allowClear
+                                                        allowClear={true}
                                                         className="input-box"
-                                                        value={selectedState}
+                                                        onSelect={onStateChange}
+                                                        style={{borderRadius:"20px",width:"100%"}}
+                                                        
                                                     >
 
                                                     {NIGERIA_STATES.map((state)=>{
@@ -99,16 +101,17 @@ const { Option } = Select;
                                                     <Select
                                                         placeholder="Select LGA"
                                                         onChange={onLGAChange}
-                                                        allowClear
+                                                        onSelect={onLGAChange}
+                                                        allowClear={true}
                                                         className="input-box"
-                                                        style={{borderRadius:"20px"}}
+                                                        style={{borderRadius:"20px",width:"100%"}}
                                                         
                                                     >
-                                                        {SELECTED_STATE_LGA.lgas.map((selectedStateLGAs)=>{
+                                                        {/* {SELECTED_STATE_LGA.lgas.map((selectedStateLGAs)=>{
                                                         return(
                                                             <Option key={selectedStateLGAs} value={selectedStateLGAs}>{selectedStateLGAs}</Option>
                                                         )
-                                                        })}
+                                                        })} */}
                                                      </Select>
                                                         <h4 className="filter-title">LGA</h4>
                                                     </div>
@@ -127,9 +130,11 @@ const { Option } = Select;
                                                     <div className=" filter">
                                                     <Select
                                                         placeholder="Select Type"
-                                                        onChange={onStateChange}
-                                                        allowClear
+                                                        onChange={onHouseTypeChange}
+                                                        onSelect={onHouseTypeChange}
+                                                        allowClear={true}
                                                         className="input-box"
+                                                        style={{borderRadius:"20px",width:"100%"}}
                                                     >
                                                         <Option value="oneRoom">One room</Option>
                                                         <Option value="oneRoomSelfcon">One room selfcon</Option>
@@ -149,20 +154,6 @@ const { Option } = Select;
                                                 </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         </div>
                         <div className="show-on-mobile mobile-menu">
                             <div className="easy-rent-container ">
@@ -199,9 +190,12 @@ const { Option } = Select;
                                                     <Select
                                                         placeholder="Select state"
                                                         onChange={onStateChange}
-                                                        allowClear
+                                                        allowClear={true}
                                                         className="input-box"
-                                                        value={selectedState}
+                                                        onSelect={onStateChange}
+                                                        style={{borderRadius:"20px",width:"100%"}}
+                                                        
+                                                       
                                                     >
 
                                                     {NIGERIA_STATES.map((state)=>{
@@ -217,16 +211,16 @@ const { Option } = Select;
                                                     <Select
                                                         placeholder="Select LGA"
                                                         onChange={onLGAChange}
-                                                        allowClear
+                                                        allowClear={true}
                                                         className="input-box"
-                                                        style={{borderRadius:"20px"}}
+                                                        style={{borderRadius:"20px",width:"100%"}}
                                                         
                                                     >
-                                                        {SELECTED_STATE_LGA.lgas.map((selectedStateLGAs)=>{
+                                                        {/* {SELECTED_STATE_LGA.lgas.map((selectedStateLGAs)=>{
                                                         return(
                                                             <Option key={selectedStateLGAs} value={selectedStateLGAs}>{selectedStateLGAs}</Option>
                                                         )
-                                                        })}
+                                                        })} */}
                                                      </Select>
                                                         <h4 className="filter-title">LGA</h4>
                                                     </div>
@@ -245,9 +239,11 @@ const { Option } = Select;
                                                     <div className=" filter">
                                                     <Select
                                                         placeholder="Select Type"
-                                                        onChange={onStateChange}
-                                                        allowClear
+                                                        onChange={onHouseTypeChange}
+                                                        onSelect={onHouseTypeChange}
+                                                        allowClear={true}
                                                         className="input-box"
+                                                        style={{borderRadius:"20px",width:"100%"}}
                                                     >
                                                         <Option value="oneRoom">One room</Option>
                                                         <Option value="oneRoomSelfcon">One room selfcon</Option>
@@ -283,7 +279,7 @@ const { Option } = Select;
                       
                             <div className="card-descriptions">
                                     <div className="description-icon">
-                                    <span content="NGN" class="price NGN">₦</span>
+                                    <span content="NGN" className="price NGN">₦</span>
                                     </div>
                                     <div className="price">250,000</div>
                             </div> 
