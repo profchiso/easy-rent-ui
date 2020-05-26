@@ -16,6 +16,7 @@ import ChangePassword from "./ChangePassword"
 import EditAppartment from "./EditAppartment"
 
 
+
 //styles
 import "./Dashboard.css"
 
@@ -104,6 +105,9 @@ const { SubMenu } = Menu;
                                                  </Menu>
                                             </div>
                                         </div>
+                                        <div className="footer-on-side-bar">
+                                            <Footer/>
+                                    </div>
                         </div>
                         <div className="show-on-mobile mobile-menu">
                             <div className="easy-rent-container ">

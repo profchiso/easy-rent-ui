@@ -1,15 +1,18 @@
 .footer-links{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     color: #A8EB12;
     font-size: 20px;
 }
 .copyright{
 text-align: center;
 margin: 0.5rem auto;
-font-size: 18px;
+font-size: 16px;
+color:#333;
 }
-.footer-contai{
-    margin-top: 0.5rem;
+.footer-link{
+    padding-left: 10px;
+
 }
+

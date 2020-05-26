@@ -6,9 +6,9 @@ import "./Footer.css"
     return (
         <div className="footer-container">
             <div className="footer-links">
-                <div>Privacy</div>
-                <div>Support</div>
-                <div>Billing</div>
+                <div className="footer-link">Privacy</div>
+                <div className="footer-link">Support</div>
+                <div className="footer-link">Billing</div>
 
             </div>
             <div className="copyright">

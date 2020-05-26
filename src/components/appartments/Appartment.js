@@ -154,6 +154,9 @@ const { Option } = Select;
                                                 </div>
                                         </div>
                                     </div>
+                                    <div className="footer-on-side-bar">
+                                            <Footer/>
+                                    </div>
                         </div>
                         <div className="show-on-mobile mobile-menu">
                             <div className="easy-rent-container ">
