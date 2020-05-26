@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 //components
 import { Row,Col,Affix ,Card ,	Drawer,Avatar,Menu,Button} from 'antd';
 import {EnvironmentOutlined,DollarOutlined,PhoneOutlined,HomeOutlined,MenuOutlined ,CloseOutlined,SettingOutlined,PlusOutlined ,EditOutlined,LoginOutlined,BarChartOutlined  } from '@ant-design/icons'
-
+import Footer from "../../common/Footer/Footer"
 import house1 from "../../../img/house1.jpg"
 import house2 from "../../../img/house2.jpeg"
 import user from "../../../img/chinedu.jpeg"
@@ -176,6 +176,9 @@ const { SubMenu } = Menu;
                                                         </SubMenu>
                                                  </Menu>
                                             </div>
+                                        </div>
+                                        <div className="footer-on-side-bar">
+                                            <Footer/>
                                         </div>
                                     </Drawer>
                                 </h1>

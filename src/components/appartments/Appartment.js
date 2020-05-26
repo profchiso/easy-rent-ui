@@ -262,7 +262,11 @@ const { Option } = Select;
                                                     </div>
                                                 </div>
                                         </div>
+                                        <div className="footer-on-side-bar">
+                                            <Footer/>
+                                        </div>
                                     </div>
+
                                 </Drawer>
                             </h1>
                             </div>
@@ -396,9 +400,7 @@ const { Option } = Select;
                             
                         </Card>
                     </div>
-                    <div className="footer-div">
-                        <Footer/>
-                    </div>
+                 
                 </Col>
             </Row>
         </div>

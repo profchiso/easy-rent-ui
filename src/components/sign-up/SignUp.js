@@ -10,6 +10,7 @@ import {  Button,Row,Col,} from 'antd';
 import ForgotPassword from "./ForgotPassword"
 import Login from "./Login"
 import Register from "./Register"
+import Footer from "../common/Footer/Footer"
 import logo  from "../../img/rental.png"
 
 
@@ -69,6 +70,7 @@ export const SignUp = () => {
                                 </Col>
                             </Row>
                     </div>
+                    <Footer/>
                 </div>
             </div>
     )

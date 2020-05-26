@@ -85,6 +85,17 @@ border-radius: 10px;
 .footer-div{
     display: none;
 }
+.footer-on-side-bar{
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: center;
+    width: 95%;
+    padding-right: 10px;
+
+}
 @media screen and (max-width: 768px) {
     .filter-pane{
         height: auto; 
@@ -142,4 +153,3 @@ border-radius: 10px;
         display: block;
     }
 }
-
