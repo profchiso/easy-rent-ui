@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: flex-end;
     color: #A8EB12;
-    font-size: 20px;
+    font-size: 10px;
 }
 .copyright{
 text-align: center;
@@ -13,6 +13,14 @@ color:#333;
 }
 .footer-link{
     padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
 
+}
+.footer-link:hover{
+    color: #333;
+    border-radius: 10px 0 0 10px;
+    background-color: #A8EB12;
+    border-right: 3px solid #333;
 }
 
