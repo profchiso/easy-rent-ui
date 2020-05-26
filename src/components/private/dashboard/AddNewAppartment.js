@@ -18,16 +18,37 @@ import "./Dashboard.css"
  const AddNewAppartment = () => {
     return (
         <div className="sign-up-card-rappers">
-       <div className="sign-up-container">
+       <div className="sign-up-container add-appartment-container">
                 <div><h3>Add new appartment</h3></div>
                 <div className="input-container">
-                    <Input placeholder="Old password" className="input-box"/>
+                    <Input placeholder="House Name" className="input-box"/>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="New password" className="input-box" size="middle"/>
+                    <Input placeholder="House Address" className="input-box" size="middle"/>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="Confirm password" className="input-box" />
+                    <Input placeholder="House Type" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="State" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="LGA" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="House Image" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="Toilet Image" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="Bathroom Image" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="Min Price" className="input-box" />
+                </div>
+                <div className="input-container">
+                    <Input placeholder="Max Price" className="input-box" />
                 </div>
                 <div className="button-container ">
                     <Button className="primary-button" shape="round" size="middle" >

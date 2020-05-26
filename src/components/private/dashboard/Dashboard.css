@@ -64,6 +64,9 @@
     justify-content: center;
     
 }
+.add-appartment-container{
+    width: 400px;
+}
 @media screen and (max-width: 768px) {
 .card-listing{
     padding-bottom: 40px;
@@ -74,5 +77,11 @@
     display: flex;
     padding-left: 5%;
     padding-right: 5%;
+}
+.add-appartment-container{
+    width: 250px;
+}
+.sign-up-card-rappers{
+    margin-top: 10px;
 }
 }

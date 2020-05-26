@@ -9,12 +9,10 @@ import "./Footer.css"
                 <div className="footer-link">Privacy</div>
                 <div className="footer-link">Support</div>
                 <div className="footer-link">Billing</div>
-
             </div>
             <div className="copyright">
-                &copy; GiftedBrain tech apps {new Date().getFullYear()}
+                &copy; GiftedBrain tech Apps {new Date().getFullYear()}
             </div>
-            
         </div>
     )
 }

@@ -21,13 +21,13 @@ import "./Dashboard.css"
        <div className="sign-up-container">
                 <div><h3>Update profile</h3></div>
                 <div className="input-container">
-                    <Input placeholder="Old password" className="input-box"/>
+                    <Input placeholder="Address" className="input-box"/>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="New password" className="input-box" size="middle"/>
+                    <Input placeholder="Phone" className="input-box" size="middle"/>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="Confirm password" className="input-box" />
+                    <Input placeholder="Profile pix" className="input-box" />
                 </div>
                 <div className="button-container ">
                     <Button className="primary-button" shape="round" size="middle" >
