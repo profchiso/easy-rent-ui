@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 //packages
 
 //components
-import { Input, Button,Row,Col,Divider} from 'antd';
+import { Input, Button,Row,Col,Divider,Form} from 'antd';
+import { UserOutlined,MailOutlined,PhoneOutlined ,LockOutlined  } from '@ant-design/icons';
+
 import facebook from "../../img/facebook.png"
 import twitter from "../../img/twitter.png"
 import google from "../../img/google.png"
@@ -15,33 +17,79 @@ import google from "../../img/google.png"
 
 
  const Register = () => {
+     const[status,setStatus]=useState(false)
+     const activateLoading=()=>{
+         setStatus(true)
+     }
+    const onFinish = values => {
+        console.log('Success:', values);
+      };
+
+    
+      const onFinishFailed = errorInfo => {
+        console.log('Failed:', errorInfo);
+        setStatus(false)
+      };
     return (
          <div className="sign-up-card-rappers">
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Sign up</h3></div>
+                        <Form
+                            name="regform"
+                         
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                        >
                         <div className="input-container">
-                            <Input placeholder="Fullname" className="input-box"/>
+                            <Form.Item
+                            rules={[{ required: true,  }]}
+                            name="name"
+                            >
+                                <Input placeholder="Fullname" className="input-box" prefix={<UserOutlined />} allowClear={true}/>
+                            </Form.Item>
                         </div>
                         <div className="input-container">
-                            <Input placeholder="Email" className="input-box" size="middle"/>
+                            <Form.Item
+                            rules={[{ required: true,  type: 'email', }]}
+                            name="email"
+                            >
+                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true}/>
+                            </Form.Item>
                         </div>
                         <div className="input-container">
-                            <Input placeholder="Phone" className="input-box" />
+                            <Form.Item
+                            rules={[{ required: true,  }]}
+                            name="phone"
+                            >
+                                <Input placeholder="Phone" className="input-box" prefix={<PhoneOutlined />}  allowClear={true}/>
+                            </Form.Item>
                         </div>
                         <div className="input-container">
-                            <Input placeholder="Password" className="input-box" />
+                            <Form.Item
+                            rules={[{ required: true,  }]}
+                            name="password"
+                            >
+                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />}/>
+                            </Form.Item>
                         </div>
                         <div className="input-container">
-                            <Input placeholder="Confirm Password" className="input-box" />
+                            <Form.Item
+                            rules={[{ required: true, }]}
+                            name="confirmPassword"
+                            >
+                                <Input.Password placeholder="Confirm Password" className="input-box" allowClear={true} prefix={<LockOutlined />} />
+                            </Form.Item>
                         </div>
-                        
                         <div className="button-container ">
-                            <Button className="primary-button" shape="round" size="middle" >
-                            Submit
-                            </Button>
+                            <Form.Item>
+                                <Button htmlType="submit" className="primary-button" shape="round" size="middle" onClick={activateLoading} loading={status} >
+                                    Submit
+                                </Button>
+                            </Form.Item>
                         </div>
+                        </Form>
                         <div className="input-container">
                             <Divider>Or sign in with</Divider>
                         </div>

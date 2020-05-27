@@ -45,3 +45,12 @@
 .login-link:active{
     color: #A8EB12;
 }
+ .ant-form-item{
+    margin-bottom: 0px;
+} 
+ .ant-form-item-has-error .ant-form-item-explain{
+    display: none;
+} 
+.ant-form-item-has-error .ant-form-item-explain, .ant-form-item-has-error .ant-form-item-split{
+    display: none;
+} 

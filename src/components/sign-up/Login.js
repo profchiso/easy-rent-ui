@@ -24,11 +24,10 @@ import { Input, Button,Row,Col,} from 'antd';
                             <Input placeholder="Password" className="input-box" size="middle"/>
                         </div>
                         <div>
-                            Forgot your password? click 
+                            Forgot password? click 
                             <Button shape="round"  className="login-link" type="link" onClick={()=>changeView("forgot-password")}>
                                 Here
                             </Button>
-
                         </div>
                         <div className="button-container ">
                             <Button className="primary-button" shape="round" size="middle" >
