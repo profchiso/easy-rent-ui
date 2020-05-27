@@ -69,6 +69,12 @@ img{
     color: #333;
     border-color: #A8EB12;
   }
+  .primary-button:visited{
+    background-color: #A8EB12;
+    color: #333;
+    border-color: #A8EB12;
+
+  }
   .content-section{
       margin: 1rem auto;
   }

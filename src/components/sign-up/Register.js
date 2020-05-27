@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 
 //packages
+import axios from "axios"
+import {Redirect} from "react-router-dom"
 
 //components
 import { Input, Button,Row,Col,Divider,Form} from 'antd';
@@ -18,20 +20,32 @@ import google from "../../img/google.png"
 
  const Register = () => {
      const[status,setStatus]=useState(false)
+     const[registrationSuccessful,setRegistrationSuccessful] =useState(false)
+
      const activateLoading=()=>{
          setStatus(true)
      }
-    const onFinish = values => {
-        console.log('Success:', values);
-      };
+    const onFinish = async values => {
+        try {
+       const res= await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup",values)
+       
+       if(res){
+           setRegistrationSuccessful(true)
 
-    
+       }
+
+            
+        } catch (error) {
+            console.log(error)  
+        }
+      };
       const onFinishFailed = errorInfo => {
         console.log('Failed:', errorInfo);
         setStatus(false)
       };
     return (
          <div className="sign-up-card-rappers">
+             {registrationSuccessful && <Redirect to="/dashboard"/>}
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
