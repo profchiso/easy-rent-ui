@@ -20,42 +20,30 @@ import google from "../../img/google.png"
 //constants
 
 
- const Register = ({register,state}) => {
+ const Register = ({registerReducer,register}) => {
+     const{isSuccessful}=registerReducer
      const[status,setStatus]=useState(false)
-    console.log(state)
-
      const activateLoading=()=>{
          setStatus(true)
      }
-    const onFinish = async values => {
-        try {
-    //    const res= await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup",values)
-       
-    //    if(res){
-    //        setRegistrationSuccessful(true)
-
-    //    }
+    const onFinish =  values => {
         register(values)
-
-            
-        } catch (error) {
-            console.log(error)  
+        if(isSuccessful){
+            setStatus(false) 
         }
-      };
+    };
       const onFinishFailed = errorInfo => {
-        console.log('Failed:', errorInfo);
         setStatus(false)
       };
     return (
          <div className="sign-up-card-rappers">
-             {state && <Redirect to="/dashboard"/>}
+             {isSuccessful && <Redirect to="/dashboard"/>}
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Sign up</h3></div>
                         <Form
                             name="regform"
-                         
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
                         >

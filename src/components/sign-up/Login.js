@@ -1,27 +1,62 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 //packages
+import {Redirect} from "react-router-dom"
+import {connect} from "react-redux"
 
 //components
-import { Input, Button,Row,Col,} from 'antd';
+import { Input, Button,Row,Col,Form} from 'antd';
+import {MailOutlined ,LockOutlined  } from '@ant-design/icons';
+import {register} from "../../actions/userAccountAction"
+
 
 
 //styles
 
 //constants
 
- const Login = ({changeView}) => {
+ const Login = ({changeView,registerReducer,login}) => {
+    const{isSuccessful}=registerReducer
+    const[status,setStatus]=useState(false)
+    const activateLoading=()=>{
+        setStatus(true)
+    }
+   const onFinish =  values => {
+       login(values)
+       if(isSuccessful){
+           setStatus(false) 
+       }
+   };
+     const onFinishFailed = errorInfo => {
+       setStatus(false)
+     };
     return (
        <div className="sign-up-card-rappers">
+       {isSuccessful && <Redirect to="/dashboard"/>}
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Sign in </h3></div>
+                        <Form
+                            name="regform"
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                        >
                         <div className="input-container">
-                            <Input placeholder="Phone number" className="input-box"/>
+                            <Form.Item
+                            rules={[{ required: true,  type: 'email', }]}
+                            name="email"
+                            >
+                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true}/>
+                            </Form.Item>
                         </div>
                         <div className="input-container">
-                            <Input placeholder="Password" className="input-box" size="middle"/>
+                             <Form.Item
+                                rules={[{ required: true,  }]}
+                                 name="password"
+                            >
+                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />}/>
+                            </Form.Item>
                         </div>
                         <div>
                             Forgot password? click 
@@ -30,10 +65,11 @@ import { Input, Button,Row,Col,} from 'antd';
                             </Button>
                         </div>
                         <div className="button-container ">
-                            <Button className="primary-button" shape="round" size="middle" >
+                            <Button htmlType="submit" className="primary-button" shape="round" size="middle" onClick={activateLoading} loading={status} >
                             Login
                             </Button>
                         </div>
+                        </Form>
                         <div>
                             <p> By using easyRENT, you agree to our Terms<br/>
                             ,Data Policy and Cookies Policy . 
@@ -45,5 +81,10 @@ import { Input, Button,Row,Col,} from 'antd';
         </div>
     )
 }
-export default Login
+const mapStateToProps=(state)=>{
+    return{
+        ...state
+    }
+}
+export default connect(mapStateToProps,{register}) (Login)
 
