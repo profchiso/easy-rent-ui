@@ -1,7 +1,9 @@
 import React, {useState,Fragment} from 'react'
 
 //packages
-import {Link} from "react-router-dom"
+import {Link,Redirect} from "react-router-dom"
+import {connect} from "react-redux"
+
 
 //components
 import { Row,Col,Affix ,Card ,	Drawer,Avatar,Menu,Button} from 'antd';
@@ -14,6 +16,7 @@ import AddNewAppartment from "./AddNewAppartment"
 import UpdateProfile from "./UpdateProfile"
 import ChangePassword from "./ChangePassword"
 import EditAppartment from "./EditAppartment"
+import{register} from "../../../actions/userAccountAction"
 
 
 
@@ -26,7 +29,8 @@ const { SubMenu } = Menu;
 
 
 
- const Dashboard = () => {
+ const Dashboard = ({registerReducer,logout}) => {
+    const{isSuccessful}=registerReducer
     const [drawerVisible,setDrawerVisible]= useState(false)
     const [view, setView] = useState("all-appartment")
     const showDrawer=()=>{
@@ -45,6 +49,7 @@ const { SubMenu } = Menu;
       }
     return (
         <div>
+        {!isSuccessful && <Redirect to="/"/>}
             <Row >
                 <Col xs={24} md={5} >
                     <Affix>
@@ -97,7 +102,7 @@ const { SubMenu } = Menu;
                                                             <EditOutlined />
                                                                 Profile
                                                                 </Menu.Item>
-                                                            <Menu.Item key="5">
+                                                            <Menu.Item key="5" onClick={()=>logout()}>
                                                             <LoginOutlined />
                                                                 Logout
                                                             </Menu.Item>
@@ -383,4 +388,9 @@ const { SubMenu } = Menu;
         </div>
     )
 }
-export default Dashboard
+const mapStateToProps=(state)=>{
+    return{
+        ...state
+    }
+}
+export default connect(mapStateToProps,{register})(Dashboard)

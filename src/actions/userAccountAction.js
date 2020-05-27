@@ -61,3 +61,9 @@ export const loginError=(err)=>{
         payload:err
     }
 }
+
+export const logout=()=>{
+    return{
+        type:"LOGOUT"
+    }
+}

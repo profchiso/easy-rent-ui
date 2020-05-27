@@ -20,6 +20,14 @@ export const registerReducer=(state=initialState,actions)=>{
             error:payload,
             isSuccessful:true
         }
+    }else if(type==="LOGOUT"){
+        localStorage.removeItem("token")
+        return{
+            ...state,
+            user:{},
+            isSuccessful:false,
+            token:""
+        }
     }
     return state
 }
