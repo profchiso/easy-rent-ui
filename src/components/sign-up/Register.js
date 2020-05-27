@@ -1,12 +1,14 @@
 import React,{useState} from 'react'
 
 //packages
-import axios from "axios"
+
 import {Redirect} from "react-router-dom"
+import {connect} from "react-redux"
 
 //components
 import { Input, Button,Row,Col,Divider,Form} from 'antd';
 import { UserOutlined,MailOutlined,PhoneOutlined ,LockOutlined  } from '@ant-design/icons';
+import {register} from "../../actions/userAccountAction"
 
 import facebook from "../../img/facebook.png"
 import twitter from "../../img/twitter.png"
@@ -18,21 +20,22 @@ import google from "../../img/google.png"
 //constants
 
 
- const Register = () => {
+ const Register = ({register,state}) => {
      const[status,setStatus]=useState(false)
-     const[registrationSuccessful,setRegistrationSuccessful] =useState(false)
+    console.log(state)
 
      const activateLoading=()=>{
          setStatus(true)
      }
     const onFinish = async values => {
         try {
-       const res= await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup",values)
+    //    const res= await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup",values)
        
-       if(res){
-           setRegistrationSuccessful(true)
+    //    if(res){
+    //        setRegistrationSuccessful(true)
 
-       }
+    //    }
+        register(values)
 
             
         } catch (error) {
@@ -45,7 +48,7 @@ import google from "../../img/google.png"
       };
     return (
          <div className="sign-up-card-rappers">
-             {registrationSuccessful && <Redirect to="/dashboard"/>}
+             {state && <Redirect to="/dashboard"/>}
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
@@ -123,4 +126,9 @@ import google from "../../img/google.png"
         </div>
     )
 }
-export default Register
+const mapStateToProps=(state)=>{
+    return{
+        ...state
+    }
+}
+export default connect(mapStateToProps,{register})(Register)
