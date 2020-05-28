@@ -16,7 +16,7 @@ export const registerReducer=(state=initialState,actions)=>{
             user:payload.user,
             isSuccessful:true,
             error:{},
-            passwordResetResponse:{}
+           
         }
     }else if(type==="REGISTRATION_ERROR" || type==="LOGIN_ERROR"){
         localStorage.removeItem("token")
