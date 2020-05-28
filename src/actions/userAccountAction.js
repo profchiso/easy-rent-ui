@@ -98,3 +98,27 @@ export const clearErrorMessage=()=>{
         type:"CLEAR_ERROR_MESSAGE"
     }
 }
+
+
+
+export const updatePassword=(userData)=>{
+    return async (dispatch) => {
+        try {
+            const user = await  axios.patch("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/update-password",userData,{
+				headers: {
+					'content-type': 'application/json',
+				},
+			})
+            console.log(user)
+
+            if(user.data.statusCode===200){
+                dispatch(savePasswordResetResponseToState(user.data))
+            }else{
+                dispatch(savePasswordResetResponseToState(user.data))
+            }
+        } catch (error) {
+            console.log(error)
+            dispatch(savePasswordResetResponseToState(error))
+        }
+    }
+}

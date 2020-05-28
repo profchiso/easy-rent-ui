@@ -4,7 +4,8 @@ import React, {} from 'react'
 
 
 //components
-import {Input,Button} from 'antd';
+import {Input,Button,Form} from 'antd';
+import {LockOutlined  } from '@ant-design/icons';
 
 
 
@@ -21,25 +22,39 @@ import "./Dashboard.css"
         <div className="sign-up-card-rappers">
           <div className="sign-up-container">
                 <div><h3>Change password</h3></div>
+                <Form>
                 <div className="input-container">
-                    <Input placeholder="Old password" className="input-box"/>
+                        <Form.Item
+                            rules={[{ required: true,   }]}
+                            name="oldPassword"
+                            >
+                            <Input placeholder="Old password" className="input-box"/>
+                    </Form.Item>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="New password" className="input-box" size="middle"/>
+                     <Form.Item
+                            rules={[{ required: true,  }]}
+                            name="newPassword"
+                            >
+                            <Input.Password placeholder="New password" className="input-box" prefix={<LockOutlined />}/>
+                        </Form.Item>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="Confirm password" className="input-box" />
+                        <Form.Item
+                            rules={[{ required: true,  }]}
+                            name="newConfirmPassword"
+                            >
+                            <Input.Password placeholder="Confirm password" className="input-box" prefix={<LockOutlined />}/>
+                        </Form.Item>
                 </div>
                 <div className="button-container ">
-                    <Button className="primary-button" shape="round" size="middle" >
+                    <Button htmlType="submit" className="primary-button" shape="round" size="middle" >
                     Submit
                     </Button>
                 </div>
-                
-                
-              
+                </Form> 
          </div>
-         </div>
+    </div>
     )
 }
 export default ChangePassword
