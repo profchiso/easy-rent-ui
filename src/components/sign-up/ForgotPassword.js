@@ -6,35 +6,39 @@ import {connect} from "react-redux"
 //components
 import { Input, Button,Row,Col,Form} from 'antd';
 import {MailOutlined , } from '@ant-design/icons';
-import {forgotPassword} from "../../actions/userAccountAction"
+import {forgotPassword,clearErrorMessage} from "../../actions/userAccountAction"
 
 
 //styles
 
 //constants
 
- const ForgotPassword = ({changeView,registerReducer,forgotPassword}) => {
-    const{isSuccessful,passwordResetResponse}=registerReducer
+ const ForgotPassword = ({changeView,registerReducer,forgotPassword,clearErrorMessage}) => {
+    const{passwordResetResponse}=registerReducer
     const[status,setStatus]=useState(false)
     const activateLoading=()=>{
         setStatus(true)
     }
     const onFinish =  values => {
         forgotPassword(values)
-         if(isSuccessful){
+         if(passwordResetResponse.errMessage !==""){
              setStatus(false) 
          }
     };
       const onFinishFailed = errorInfo => {
         setStatus(false)
       };
+      const onChange=()=>{
+        clearErrorMessage()
+        setStatus(false) 
+     }
     return (
         <div className="sign-up-card-rappers">
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Forgot Password</h3></div>
-                        <div className={`${passwordResetResponse.message ? "":"hide-element"}`}>{passwordResetResponse.message}</div>
+                        <div className={`${passwordResetResponse.errMessage ? "":"hide-element"}`}>{passwordResetResponse.errMessage}</div>
                         <Form
                             name="passwordform"
                             onFinish={onFinish}
@@ -45,7 +49,7 @@ import {forgotPassword} from "../../actions/userAccountAction"
                                     rules={[{ required: true,  type: 'email', }]}
                                     name="email"
                                 >
-                                    <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true}/>
+                                    <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true} onChange={onChange}/>
                                 </Form.Item>
                             </div>
                             <div className="button-container ">
@@ -76,4 +80,4 @@ const mapStateToProps=(state)=>{
         ...state
     }
 }
-export default connect(mapStateToProps,{forgotPassword}) (ForgotPassword)
+export default connect(mapStateToProps,{forgotPassword,clearErrorMessage}) (ForgotPassword)

@@ -39,6 +39,14 @@ export const registerReducer=(state=initialState,actions)=>{
             ...state,
             passwordResetResponse:payload
         }
+    }else if(type==="CLEAR_ERROR_MESSAGE"){
+        return{
+            ...state,
+            error:{},
+            passwordResetResponse:{}
+           
+        }
     }
+
     return state
 }

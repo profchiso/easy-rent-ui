@@ -8,7 +8,7 @@ import {connect} from "react-redux"
 //components
 import { Input, Button,Row,Col,Divider,Form} from 'antd';
 import { UserOutlined,MailOutlined,PhoneOutlined ,LockOutlined  } from '@ant-design/icons';
-import {register} from "../../actions/userAccountAction"
+import {register, clearErrorMessage} from "../../actions/userAccountAction"
 
 import facebook from "../../img/facebook.png"
 import twitter from "../../img/twitter.png"
@@ -20,7 +20,7 @@ import google from "../../img/google.png"
 //constants
 
 
- const Register = ({registerReducer,register}) => {
+ const Register = ({registerReducer,register, clearErrorMessage}) => {
      
      const{isSuccessful,error}=registerReducer
      const[status,setStatus]=useState(false)
@@ -31,13 +31,15 @@ import google from "../../img/google.png"
         register(values)
         if(isSuccessful){
             setStatus(false) 
-        }else if(error.errMessage ){
-            setStatus(false) 
         }
     };
       const onFinishFailed = errorInfo => {
         setStatus(false)
       };
+      const onChange=()=>{
+        clearErrorMessage()
+        setStatus(false) 
+     }
     return (
          <div className="sign-up-card-rappers">
             
@@ -56,7 +58,7 @@ import google from "../../img/google.png"
                             rules={[{ required: true,  }]}
                             name="name"
                             >
-                                <Input placeholder="Fullname" className="input-box" prefix={<UserOutlined />} allowClear={true}/>
+                                <Input placeholder="Fullname" className="input-box" prefix={<UserOutlined />} allowClear={true} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div className="input-container">
@@ -64,7 +66,7 @@ import google from "../../img/google.png"
                             rules={[{ required: true,  type: 'email', }]}
                             name="email"
                             >
-                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true}/>
+                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div className="input-container">
@@ -72,7 +74,7 @@ import google from "../../img/google.png"
                             rules={[{ required: true,  }]}
                             name="phone"
                             >
-                                <Input placeholder="Phone" className="input-box" prefix={<PhoneOutlined />}  allowClear={true}/>
+                                <Input placeholder="Phone" className="input-box" prefix={<PhoneOutlined />}  allowClear={true} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div className="input-container">
@@ -80,7 +82,7 @@ import google from "../../img/google.png"
                             rules={[{ required: true,  }]}
                             name="password"
                             >
-                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />}/>
+                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div className="input-container">
@@ -88,7 +90,7 @@ import google from "../../img/google.png"
                             rules={[{ required: true, }]}
                             name="confirmPassword"
                             >
-                                <Input.Password placeholder="Confirm Password" className="input-box" allowClear={true} prefix={<LockOutlined />} />
+                                <Input.Password placeholder="Confirm Password" className="input-box" allowClear={true} prefix={<LockOutlined />} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div className="button-container ">
@@ -123,4 +125,4 @@ const mapStateToProps=(state)=>{
         ...state
     }
 }
-export default connect(mapStateToProps,{register})(Register)
+export default connect(mapStateToProps,{register, clearErrorMessage})(Register)

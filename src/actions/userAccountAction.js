@@ -93,3 +93,8 @@ export const savePasswordResetResponseToState=(res)=>{
         payload:res
     }
 }
+export const clearErrorMessage=()=>{
+    return{
+        type:"CLEAR_ERROR_MESSAGE"
+    }
+}

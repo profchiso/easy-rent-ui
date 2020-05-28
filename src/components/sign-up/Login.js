@@ -7,7 +7,7 @@ import {connect} from "react-redux"
 //components
 import { Input, Button,Row,Col,Form} from 'antd';
 import {MailOutlined ,LockOutlined  } from '@ant-design/icons';
-import {login} from "../../actions/userAccountAction"
+import {login,clearErrorMessage} from "../../actions/userAccountAction"
 
 
 
@@ -15,9 +15,10 @@ import {login} from "../../actions/userAccountAction"
 
 //constants
 
- const Login = ({changeView,registerReducer,login}) => {
+ const Login = ({changeView,registerReducer,login,clearErrorMessage}) => {
     const{isSuccessful,error}=registerReducer
     const[status,setStatus]=useState(false)
+   
     const activateLoading=()=>{
         setStatus(true)
     }
@@ -25,32 +26,37 @@ import {login} from "../../actions/userAccountAction"
        login(values)
        if(isSuccessful){
            setStatus(false) 
-       }else if(error.errMessage!==""){
-        setStatus(false) 
+       }else if(error.errMessage ){
+        setStatus(false)  
        }
    };
      const onFinishFailed = errorInfo => {
          console.log(errorInfo)
        setStatus(false)
      };
+     const onChange=()=>{
+        clearErrorMessage()
+        setStatus(false) 
+     }
     return (
        <div className="sign-up-card-rappers">
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Sign in </h3></div>
-                        <div className={`${error.errMessage ? "":"hide-element"} err-message`}>{error.errMessage}</div>
+                        <div className={`${error.errMessage ? "":"hide-element"} err-message `}>{error.errMessage}</div>
                         <Form
                             name="loginform"
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
+                        
                         >
                         <div className="input-container">
                             <Form.Item
                             rules={[{ required: true,  type: 'email', }]}
                             name="email"
                             >
-                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true}/>
+                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div className="input-container">
@@ -58,7 +64,7 @@ import {login} from "../../actions/userAccountAction"
                                 rules={[{ required: true,  }]}
                                  name="password"
                             >
-                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />}/>
+                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />} onChange={onChange}/>
                             </Form.Item>
                         </div>
                         <div>
@@ -89,5 +95,5 @@ const mapStateToProps=(state)=>{
         ...state
     }
 }
-export default connect(mapStateToProps,{login}) (Login)
+export default connect(mapStateToProps,{login,clearErrorMessage}) (Login)
 
