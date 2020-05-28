@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 
 //packages
-import {Redirect} from "react-router-dom"
+
 import {connect} from "react-redux"
 
 //components
 import { Input, Button,Row,Col,Form} from 'antd';
 import {MailOutlined ,LockOutlined  } from '@ant-design/icons';
-import {register} from "../../actions/userAccountAction"
+import {login} from "../../actions/userAccountAction"
 
 
 
@@ -28,11 +28,11 @@ import {register} from "../../actions/userAccountAction"
        }
    };
      const onFinishFailed = errorInfo => {
+         console.log(errorInfo)
        setStatus(false)
      };
     return (
        <div className="sign-up-card-rappers">
-       {isSuccessful && <Redirect to="/dashboard"/>}
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
@@ -86,5 +86,5 @@ const mapStateToProps=(state)=>{
         ...state
     }
 }
-export default connect(mapStateToProps,{register}) (Login)
+export default connect(mapStateToProps,{login}) (Login)
 

@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 //packages
 
-import {Redirect} from "react-router-dom"
+
 import {connect} from "react-redux"
 
 //components
@@ -38,7 +38,7 @@ import google from "../../img/google.png"
       };
     return (
          <div className="sign-up-card-rappers">
-             {isSuccessful && <Redirect to="/dashboard"/>}
+            
             <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
@@ -105,7 +105,7 @@ import google from "../../img/google.png"
                             <div><img src={google} alt="google" className="social-icon"/></div>
                         </div>
                         <div className="term-and condi">
-                            <p>By signing up, you agree to our Terms<br/>
+                            <p>By using easyRENT, you agree to our Terms<br/>
                             ,Data Policy and Cookies Policy . 
                             </p>
                         </div>

@@ -3,10 +3,12 @@ import React ,{useState, Fragment} from 'react'
 
 //packages
 import {Link,Redirect} from "react-router-dom"
+import {connect} from "react-redux"
 
 
 //components
 import {  Button,Row,Col,} from 'antd';
+import {register,login} from "../../actions/userAccountAction"
 import ForgotPassword from "./ForgotPassword"
 import Login from "./Login"
 import Register from "./Register"
@@ -22,8 +24,8 @@ import "./SignUp.css"
 //constants
 
 
-export const SignUp = () => {
-    const[view,setView]= useState("sign-up")
+export const SignUp = ({registerReducer}) => {
+    const[view,setView]= useState("sign-in")
     const changeView=(view)=>{
             setView(view)
     }
@@ -76,4 +78,9 @@ export const SignUp = () => {
             </div>
     )
 }
-export default SignUp
+const mapStateToProps=(state)=>{
+    return{
+        ...state
+    }
+}
+export default connect(mapStateToProps,{register,login}) (SignUp)

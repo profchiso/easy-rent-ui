@@ -27,8 +27,9 @@ export const login =(userData)=>{
     return async (dispatch) => {
         try {
             const loggedInUser = await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/login",userData)
+            console.log(loggedInUser)
 
-            if(loggedInUser.status==="200"){
+            if(loggedInUser.status===200){
                 dispatch(saveLoginUserDataToState(loggedInUser.data))
             }else{
                 dispatch(loginError(loggedInUser.data))
@@ -70,12 +71,17 @@ export const logout=()=>{
 export const forgotPassword=(userData)=>{
     return async (dispatch) => {
         try {
-            const loggedInUser = await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/forgot-password",userData)
+            const user = await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/forgot-password",userData,{
+				headers: {
+					'content-type': 'application/json',
+				},
+			})
+            console.log(user)
 
-            if(loggedInUser.status==="200"){
-                dispatch(savePasswordResetResponseToState(loggedInUser.data))
+            if(user.status===200){
+                dispatch(savePasswordResetResponseToState(user.data))
             }else{
-                dispatch(savePasswordResetResponseToState(loggedInUser.data))
+                dispatch(savePasswordResetResponseToState(user.data))
             }
         } catch (error) {
             console.log(error)

@@ -7,6 +7,7 @@ export const registerReducer=(state=initialState,actions)=>{
     console.log(payload)
 
     if(type==="SAVE_REGISTERED_USER_DATA" || type==="SAVE_LOGGED_IN_USER_DATA"){
+        console.log(payload)
         localStorage.setItem("token",JSON.stringify(payload.token))
         localStorage.setItem("user",JSON.stringify(payload.user))
         return{

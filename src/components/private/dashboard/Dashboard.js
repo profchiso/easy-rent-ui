@@ -30,7 +30,7 @@ const { SubMenu } = Menu;
 
 
  const Dashboard = ({registerReducer,logout}) => {
-     console.log(registerReducer)
+    
    
     const [drawerVisible,setDrawerVisible]= useState(false)
     const [view, setView] = useState("all-appartment")
@@ -52,7 +52,7 @@ const { SubMenu } = Menu;
       }
     return (
         <div>
-        {!localStorage.token && <Redirect to="/"/>}
+        {!localStorage.token && <Redirect to="/sign-up"/>}
             <Row >
                 <Col xs={24} md={5} >
                     <Affix>
