@@ -6,7 +6,7 @@ import {connect} from "react-redux"
 //components
 import { Input, Button,Row,Col,Form} from 'antd';
 import {MailOutlined , } from '@ant-design/icons';
-import {register} from "../../actions/userAccountAction"
+import {forgotPassword} from "../../actions/userAccountAction"
 
 
 //styles
@@ -76,4 +76,4 @@ const mapStateToProps=(state)=>{
         ...state
     }
 }
-export default connect(mapStateToProps,{register}) (ForgotPassword)
+export default connect(mapStateToProps,{forgotPassword}) (ForgotPassword)

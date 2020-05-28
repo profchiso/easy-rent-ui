@@ -16,7 +16,7 @@ import AddNewAppartment from "./AddNewAppartment"
 import UpdateProfile from "./UpdateProfile"
 import ChangePassword from "./ChangePassword"
 import EditAppartment from "./EditAppartment"
-import{register} from "../../../actions/userAccountAction"
+import{logout} from "../../../actions/userAccountAction"
 
 
 
@@ -30,6 +30,7 @@ const { SubMenu } = Menu;
 
 
  const Dashboard = ({registerReducer,logout}) => {
+     console.log(registerReducer)
    
     const [drawerVisible,setDrawerVisible]= useState(false)
     const [view, setView] = useState("all-appartment")
@@ -40,7 +41,10 @@ const { SubMenu } = Menu;
         setDrawerVisible(false)
     }
   const  handleClick = e => {
-        console.log('click ', e);
+        console.log('click ', e.key);
+        if(e.key==="logout"){
+            logout()
+        }
       };
       const changeView=(view)=>{
           setView(view)
@@ -69,7 +73,7 @@ const { SubMenu } = Menu;
                                             </div>
                                             <div className="ant-menu-container">
                                                 <Menu
-                                                    onClick={handleClick}
+                                                   onClick={handleClick}
                                                     mode="inline"
                                                     >
                                                         <SubMenu
@@ -81,11 +85,11 @@ const { SubMenu } = Menu;
                                                                 </span>
                                                         }
                                                         >
-                                                            <Menu.Item key="1" onClick={()=>changeView("add-new")}>
+                                                            <Menu.Item key="add-new" onClick={()=>changeView("add-new")}>
                                                             <PlusOutlined /> Add new
                                                                 
                                                                 </Menu.Item>
-                                                            <Menu.Item key="2" onClick={()=>changeView("my-appartments")}>
+                                                            <Menu.Item key="my-appartments" onClick={()=>changeView("my-appartments")}>
                                                             <BarChartOutlined />
                                                             My appartments
 
@@ -93,15 +97,15 @@ const { SubMenu } = Menu;
                                                             
                                                         </SubMenu>
                                                         <SubMenu key="sub2" icon={<SettingOutlined />} title="Accout setting">
-                                                            <Menu.Item key="3" onClick={()=>changeView("password")}>
+                                                            <Menu.Item key="password" onClick={()=>changeView("password")}>
                                                             <EditOutlined />
                                                                 Password
                                                                 </Menu.Item>
-                                                            <Menu.Item key="4" onClick={()=>changeView("profile")}>
+                                                            <Menu.Item key="profile" onClick={()=>changeView("profile")}>
                                                             <EditOutlined />
                                                                 Profile
                                                                 </Menu.Item>
-                                                            <Menu.Item key="5" onClick={()=>logout()}>
+                                                            <Menu.Item key="logout" >
                                                             <LoginOutlined />
                                                                 Logout
                                                             </Menu.Item>
@@ -145,7 +149,7 @@ const { SubMenu } = Menu;
                                             </div>
                                             <div className="ant-menu-container">
                                                 <Menu
-                                                    onClick={handleClick}
+                                                     onClick={handleClick}
                                                     mode="inline"
                                                     >
                                                         <SubMenu
@@ -157,11 +161,11 @@ const { SubMenu } = Menu;
                                                                 </span>
                                                         }
                                                         >
-                                                            <Menu.Item key="1" onClick={()=>changeView("add-new")}>
+                                                            <Menu.Item key="add-new" onClick={()=>changeView("add-new")}>
                                                             <PlusOutlined /> Add new
                                                                 
                                                                 </Menu.Item>
-                                                            <Menu.Item key="2" onClick={()=>changeView("my-appartments")}>
+                                                            <Menu.Item key="my-appartments" onClick={()=>changeView("my-appartments")}>
                                                             <BarChartOutlined />
                                                             My appartments
 
@@ -169,16 +173,16 @@ const { SubMenu } = Menu;
                                                             
                                                         </SubMenu>
                                                         <SubMenu key="sub2" icon={<SettingOutlined />} title="Accout setting">
-                                                            <Menu.Item key="3" onClick={()=>changeView("password")}>
+                                                            <Menu.Item key="password" onClick={()=>changeView("password")}>
                                                             <EditOutlined />
                                                                 Password
                                                                 </Menu.Item>
-                                                            <Menu.Item key="4" onClick={()=>changeView("profile")}>
+                                                            <Menu.Item key="profile" onClick={()=>changeView("profile")}>
                                                             <EditOutlined />
                                                                 Profile
                                                                 </Menu.Item>
-                                                            <Menu.Item key="5">
-                                                            <LoginOutlined onClick={()=>logout()}/>
+                                                            <Menu.Item key="logout">
+                                                            <LoginOutlined />
                                                                 Logout
                                                             </Menu.Item>
                                                         </SubMenu>
@@ -205,7 +209,7 @@ const { SubMenu } = Menu;
                         >
                             <div className="card-descriptions">
                                     <div className="description-icon">
-                                    <span content="NGN" class="price NGN">₦</span>
+                                    <span content="NGN" className="price NGN">₦</span>
                                     </div>
                                     <div className="price">250,000</div>
                             </div> 
@@ -392,4 +396,4 @@ const mapStateToProps=(state)=>{
         ...state
     }
 }
-export default connect(mapStateToProps,{register})(Dashboard)
+export default connect(mapStateToProps,{logout})(Dashboard)

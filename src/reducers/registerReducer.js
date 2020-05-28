@@ -1,6 +1,7 @@
 const initialState={token:"",user:{}, isSuccessful:false,error:{},passwordResetResponse:{}}
 
 export const registerReducer=(state=initialState,actions)=>{
+   
     const {type,payload} = actions
     console.log(type)
     console.log(payload)
