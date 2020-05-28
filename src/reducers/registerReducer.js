@@ -1,4 +1,4 @@
-const initialState={token:"",user:{}, isSuccessful:false,error:{}}
+const initialState={token:"",user:{}, isSuccessful:false,error:{},PasswordResetResponse:{}}
 
 export const registerReducer=(state=initialState,actions)=>{
     const {type,payload} = actions
@@ -7,14 +7,18 @@ export const registerReducer=(state=initialState,actions)=>{
 
     if(type==="SAVE_REGISTERED_USER_DATA" || type==="SAVE_LOGGED_IN_USER_DATA"){
         localStorage.setItem("token",payload.token)
+        localStorage.setItem("user",JSON.stringify(payload.user))
         return{
             ...state,
             token:payload.token,
             user:payload.user,
-            isSuccessful:true
+            isSuccessful:true,
+            error:{},
+            PasswordResetResponse:{}
         }
     }else if(type==="REGISTRATION_ERROR" || type==="LOGIN_ERROR"){
         localStorage.removeItem("token")
+        localStorage.removeItem("user")
         return{
             ...state,
             error:payload,
@@ -27,6 +31,11 @@ export const registerReducer=(state=initialState,actions)=>{
             user:{},
             isSuccessful:false,
             token:""
+        }
+    }else if(type==="SET_PASSWORD_RESET_RESPONSE"){
+        return{
+            ...state,
+            PasswordResetResponse:payload
         }
     }
     return state

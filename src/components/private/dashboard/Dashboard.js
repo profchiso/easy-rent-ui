@@ -30,7 +30,7 @@ const { SubMenu } = Menu;
 
 
  const Dashboard = ({registerReducer,logout}) => {
-    const{isSuccessful}=registerReducer
+   
     const [drawerVisible,setDrawerVisible]= useState(false)
     const [view, setView] = useState("all-appartment")
     const showDrawer=()=>{
@@ -45,11 +45,10 @@ const { SubMenu } = Menu;
       const changeView=(view)=>{
           setView(view)
           setDrawerVisible(false)
-        
       }
     return (
         <div>
-        {!isSuccessful && <Redirect to="/"/>}
+        {!localStorage.token && <Redirect to="/"/>}
             <Row >
                 <Col xs={24} md={5} >
                     <Affix>

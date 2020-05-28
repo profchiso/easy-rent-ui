@@ -85,7 +85,9 @@ img{
     padding: 20px;
     border-radius: 24px;
   }
-
+.hide-element{
+  display: none;
+}
   @media screen and (max-width: 768px) {
     .content-container{
         margin: 1rem;
