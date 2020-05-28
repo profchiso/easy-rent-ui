@@ -4,8 +4,8 @@ export const register =(userData)=>{
     return async (dispatch) => {
         try {
             const registeredUser = await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup",userData)
-
-            if(registeredUser.status===201){
+        
+            if(registeredUser.data.statusCode===201){
                 dispatch(saveRegisteredUserDataToState(registeredUser.data))
             }else{
                 dispatch(registrationError(registeredUser.data)) 
@@ -27,9 +27,7 @@ export const login =(userData)=>{
     return async (dispatch) => {
         try {
             const loggedInUser = await  axios.post("https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/login",userData)
-            console.log(loggedInUser)
-
-            if(loggedInUser.status===200){
+            if(loggedInUser.data.statusCode===200){
                 dispatch(saveLoginUserDataToState(loggedInUser.data))
             }else{
                 dispatch(loginError(loggedInUser.data))
@@ -78,7 +76,7 @@ export const forgotPassword=(userData)=>{
 			})
             console.log(user)
 
-            if(user.status===200){
+            if(user.data.statusCode===200){
                 dispatch(savePasswordResetResponseToState(user.data))
             }else{
                 dispatch(savePasswordResetResponseToState(user.data))

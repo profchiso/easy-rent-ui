@@ -54,3 +54,9 @@
 .ant-form-item-has-error .ant-form-item-explain, .ant-form-item-has-error .ant-form-item-split{
     display: none;
 } 
+.err-message{
+    color: red;
+}
+.err-message::first-letter{
+    text-transform: uppercase;
+}

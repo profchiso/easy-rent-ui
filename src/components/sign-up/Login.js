@@ -16,7 +16,7 @@ import {login} from "../../actions/userAccountAction"
 //constants
 
  const Login = ({changeView,registerReducer,login}) => {
-    const{isSuccessful}=registerReducer
+    const{isSuccessful,error}=registerReducer
     const[status,setStatus]=useState(false)
     const activateLoading=()=>{
         setStatus(true)
@@ -25,6 +25,8 @@ import {login} from "../../actions/userAccountAction"
        login(values)
        if(isSuccessful){
            setStatus(false) 
+       }else if(error.errMessage!==""){
+        setStatus(false) 
        }
    };
      const onFinishFailed = errorInfo => {
@@ -37,6 +39,7 @@ import {login} from "../../actions/userAccountAction"
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Sign in </h3></div>
+                        <div className={`${error.errMessage ? "":"hide-element"} err-message`}>{error.errMessage}</div>
                         <Form
                             name="loginform"
                             onFinish={onFinish}

@@ -22,7 +22,7 @@ import google from "../../img/google.png"
 
  const Register = ({registerReducer,register}) => {
      
-     const{isSuccessful}=registerReducer
+     const{isSuccessful,error}=registerReducer
      const[status,setStatus]=useState(false)
      const activateLoading=()=>{
          setStatus(true)
@@ -30,6 +30,8 @@ import google from "../../img/google.png"
     const onFinish =  values => {
         register(values)
         if(isSuccessful){
+            setStatus(false) 
+        }else if(error.errMessage ){
             setStatus(false) 
         }
     };
@@ -43,6 +45,7 @@ import google from "../../img/google.png"
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Sign up</h3></div>
+                        <div className={`${error.errMessage ? "":"hide-element"} err-message`}>{error.errMessage}</div>
                         <Form
                             name="regform"
                             onFinish={onFinish}
