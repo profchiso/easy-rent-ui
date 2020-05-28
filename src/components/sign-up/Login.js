@@ -38,7 +38,7 @@ import {register} from "../../actions/userAccountAction"
                     <div className="sign-up-container">
                         <div><h3>Sign in </h3></div>
                         <Form
-                            name="regform"
+                            name="loginform"
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
                         >

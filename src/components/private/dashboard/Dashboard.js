@@ -178,7 +178,7 @@ const { SubMenu } = Menu;
                                                                 Profile
                                                                 </Menu.Item>
                                                             <Menu.Item key="5">
-                                                            <LoginOutlined />
+                                                            <LoginOutlined onClick={()=>logout()}/>
                                                                 Logout
                                                             </Menu.Item>
                                                         </SubMenu>

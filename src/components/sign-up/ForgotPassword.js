@@ -14,7 +14,7 @@ import {register} from "../../actions/userAccountAction"
 //constants
 
  const ForgotPassword = ({changeView,registerReducer,forgotPassword}) => {
-     const{isSuccessful,savePasswordResetResponse}=registerReducer
+    const{isSuccessful,passwordResetResponse}=registerReducer
     const[status,setStatus]=useState(false)
     const activateLoading=()=>{
         setStatus(true)
@@ -34,9 +34,9 @@ import {register} from "../../actions/userAccountAction"
                 <Col xs={24} md={24}>
                     <div className="sign-up-container">
                         <div><h3>Forgot Password</h3></div>
-                        <div>{"password reset response"}</div>
+                        <div className={`${passwordResetResponse.message ? "":"hide-element"}`}>{passwordResetResponse.message}</div>
                         <Form
-                            name="regform"
+                            name="passwordform"
                             onFinish={onFinish}
                             onFinishFailed={onFinishFailed}
                         >

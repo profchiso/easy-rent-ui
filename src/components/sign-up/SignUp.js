@@ -2,7 +2,7 @@
 import React ,{useState, Fragment} from 'react'
 
 //packages
-import {Link} from "react-router-dom"
+import {Link,Redirect} from "react-router-dom"
 
 
 //components
@@ -30,6 +30,7 @@ export const SignUp = () => {
    
     return (
             <div className="app-container">
+            {localStorage.token && <Redirect to="/dashboard"/>}
                 <div className="content-container">
                 <div className="">
                     <Link to="/" >

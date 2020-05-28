@@ -21,6 +21,7 @@ import google from "../../img/google.png"
 
 
  const Register = ({registerReducer,register}) => {
+     
      const{isSuccessful}=registerReducer
      const[status,setStatus]=useState(false)
      const activateLoading=()=>{
