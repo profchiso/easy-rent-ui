@@ -16,7 +16,7 @@
 }
 .card-listing{
     min-height: 100vh !important;
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+   background-color: #f0f5f5;
 }
 .appartment-logo-container{
     padding-top:1rem ;

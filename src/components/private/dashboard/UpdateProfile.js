@@ -4,7 +4,8 @@ import React, {} from 'react'
 
 
 //components
-import {Input,Button} from 'antd';
+import {Input,Button,Upload,} from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 
 
@@ -27,7 +28,11 @@ import "./Dashboard.css"
                     <Input placeholder="Phone" className="input-box" size="middle"/>
                 </div>
                 <div className="input-container">
-                    <Input placeholder="Profile pix" className="input-box" />
+                    <Upload >
+                        <Button className="upload-btn">
+                        <UploadOutlined /> Profile pix
+                        </Button>
+                    </Upload>
                 </div>
                 <div className="button-container ">
                     <Button className="primary-button" shape="round" size="middle" >
