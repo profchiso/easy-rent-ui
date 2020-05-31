@@ -278,7 +278,7 @@ const { Option } = Select;
                 </Col>
                 <Col xs={24} md={19} className="card-listing">
                     <div className="appartment-listing-pane">
-                            <Row>
+                            <Row gutter={8}>
                                 <Col xs={24} md={6}>
                                 <Card
                                     hoverable
