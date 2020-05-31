@@ -28,6 +28,7 @@ export const registerReducer=(state=initialState,actions)=>{
         }
     }else if(type==="LOGOUT"){
         localStorage.removeItem("token")
+        localStorage.removeItem("user")
         return{
             ...state,
             user:{},
