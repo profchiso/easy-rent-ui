@@ -278,38 +278,43 @@ const { Option } = Select;
                 </Col>
                 <Col xs={24} md={19} className="card-listing">
                     <div className="appartment-listing-pane">
-                        <Card
-                            hoverable
-                            style={{ width: 250 }}
-                            cover={<div className="card-image-container"><img  alt="example" src={house1}className="card-image" /></div>}
-                        >
+                            <Row>
+                                <Col xs={24} md={6}>
+                                <Card
+                                    hoverable
+                                    style={{ width: 250 }}
+                                    cover={<div className="card-image-container"><img  alt="example" src={house1}className="card-image" /></div>}
+                                    >
                       
-                            <div className="card-descriptions">
-                                    <div className="description-icon">
-                                    <span content="NGN" className="price NGN">₦</span>
-                                    </div>
-                                    <div className="price">250,000</div>
-                            </div> 
-                            <div className="card-descriptions">
-                                    <div className="description-icon">
-                                        <EnvironmentOutlined />
-                                    </div>
-                                    <div>126 isawo road abule ago</div>
-                            </div> 
-                            <div className="card-descriptions">
-                                    <div className="description-icon">
-                                        <HomeOutlined />
-                                    </div>
-                                    <div className="">1 bedroom fat</div>
-                            </div> 
-                            <div className="card-descriptions">
-                                    <div className="description-icon">
-                                        <PhoneOutlined />   
-                                    </div>
-                                    <div className=""><a href="tel:08036009397">08036009397</a></div>
-                            </div> 
-                        </Card>
-                        <Card
+                                    <div className="card-descriptions">
+                                            <div className="description-icon">
+                                            <span content="NGN" className="price NGN">₦</span>
+                                            </div>
+                                            <div className="price">250,000</div>
+                                    </div> 
+                                    <div className="card-descriptions">
+                                            <div className="description-icon">
+                                                <EnvironmentOutlined />
+                                            </div>
+                                            <div>126 isawo road abule ago</div>
+                                    </div> 
+                                    <div className="card-descriptions">
+                                            <div className="description-icon">
+                                                <HomeOutlined />
+                                            </div>
+                                            <div className="">1 bedroom fat</div>
+                                    </div> 
+                                    <div className="card-descriptions">
+                                            <div className="description-icon">
+                                                <PhoneOutlined />   
+                                            </div>
+                                            <div className=""><a href="tel:08036009397">08036009397</a></div>
+                                    </div> 
+                                </Card>
+                                
+                                </Col>
+                                <Col xs={24} md={6}>
+                                <Card
                             hoverable
                             style={{ width: 250 }}
                             cover={<div className="card-image-container"><img  alt="example" src={house2}className="card-image" /></div>}
@@ -340,7 +345,10 @@ const { Option } = Select;
                             </div> 
                             
                         </Card>
-                        <Card
+                                
+                                </Col>
+                                <Col xs={24} md={6}>
+                                <Card
                             hoverable
                             style={{ width: 250 }}
                             cover={<div className="card-image-container"><img  alt="example" src={house2}className="card-image" /></div>}
@@ -371,7 +379,10 @@ const { Option } = Select;
                             </div> 
                             
                         </Card>
-                        <Card
+                                
+                                </Col>
+                                <Col xs={24} md={6}>
+                                <Card
                             hoverable
                             style={{ width: 250 }}
                             cover={<div className="card-image-container"><img  alt="example" src={house2}className="card-image" /></div>}
@@ -402,8 +413,11 @@ const { Option } = Select;
                             </div> 
                             
                         </Card>
+                                
+                                </Col>
+                            </Row>
                     </div>
-                 
+
                 </Col>
             </Row>
         </div>
