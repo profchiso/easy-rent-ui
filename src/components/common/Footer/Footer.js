@@ -8,7 +8,7 @@ import "./Footer.css"
             <div className="footer-links">
                 <div className="footer-link">Privacy</div>
                 <div className="footer-link">Support</div>
-                <div className="footer-link">Billing</div>
+                <div className="footer-link">Pricing</div>
             </div>
             <div className="copyright">
                 &copy; GiftedBrain tech Apps {new Date().getFullYear()}
