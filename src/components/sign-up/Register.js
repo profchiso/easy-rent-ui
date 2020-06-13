@@ -1,128 +1,205 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 
 //packages
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
 
-
-import {connect} from "react-redux"
+import { connect } from 'react-redux';
 
 //components
-import { Input, Button,Row,Col,Divider,Form} from 'antd';
-import { UserOutlined,MailOutlined,PhoneOutlined ,LockOutlined  } from '@ant-design/icons';
-import {register, clearErrorMessage} from "../../actions/userAccountAction"
+import { Input, Button, Row, Col, Divider, Form } from 'antd';
+import {
+	UserOutlined,
+	MailOutlined,
+	PhoneOutlined,
+	LockOutlined,
+} from '@ant-design/icons';
+import { register, clearErrorMessage } from '../../actions/userAccountAction';
 
-import facebook from "../../img/facebook.png"
-import twitter from "../../img/twitter.png"
-import google from "../../img/google.png"
-
+import facebook from '../../img/facebook.png';
+import twitter from '../../img/twitter.png';
+import google from '../../img/google.png';
 
 //styles
 
 //constants
 
-
- const Register = ({registerReducer,register, clearErrorMessage}) => {
-     
-     const{isSuccessful,error}=registerReducer
-     const[status,setStatus]=useState(false)
-     const activateLoading=()=>{
-         setStatus(true)
-     }
-    const onFinish =  values => {
-        register(values)
-        if(isSuccessful){
-            setStatus(false) 
-        }
-    };
-      const onFinishFailed = errorInfo => {
-        setStatus(false)
-      };
-      const onChange=()=>{
-        clearErrorMessage()
-        setStatus(false) 
-     }
-    return (
-         <div className="sign-up-card-rappers">
-            
-            <Row gutter={{ xs: 8, sm: 16, md: 24}} className="sign-up-row">
-                <Col xs={24} md={24}>
-                    <div className="sign-up-container">
-                        <div><h3>Sign up</h3></div>
-                        <div className={`${error.errMessage ? "":"hide-element"} err-message`}>{error.errMessage}</div>
-                        <Form
-                            name="regform"
-                            onFinish={onFinish}
-                            onFinishFailed={onFinishFailed}
-                        >
-                        <div className="input-container">
-                            <Form.Item
-                            rules={[{ required: true,  }]}
-                            name="name"
-                            >
-                                <Input placeholder="Fullname" className="input-box" prefix={<UserOutlined />} allowClear={true} onChange={onChange}/>
-                            </Form.Item>
-                        </div>
-                        <div className="input-container">
-                            <Form.Item
-                            rules={[{ required: true,  type: 'email', }]}
-                            name="email"
-                            >
-                                 <Input placeholder="Email" className="input-box" size="middle" prefix={<MailOutlined />} allowClear={true} onChange={onChange}/>
-                            </Form.Item>
-                        </div>
-                        <div className="input-container">
-                            <Form.Item
-                            rules={[{ required: true,  }]}
-                            name="phone"
-                            >
-                                <Input placeholder="Phone" className="input-box" prefix={<PhoneOutlined />}  allowClear={true} onChange={onChange}/>
-                            </Form.Item>
-                        </div>
-                        <div className="input-container">
-                            <Form.Item
-                            rules={[{ required: true,  }]}
-                            name="password"
-                            >
-                                <Input.Password placeholder="Password" className="input-box" allowClear={true} prefix={<LockOutlined />} onChange={onChange}/>
-                            </Form.Item>
-                        </div>
-                        <div className="input-container">
-                            <Form.Item
-                            rules={[{ required: true, }]}
-                            name="confirmPassword"
-                            >
-                                <Input.Password placeholder="Confirm Password" className="input-box" allowClear={true} prefix={<LockOutlined />} onChange={onChange}/>
-                            </Form.Item>
-                        </div>
-                        <div className="button-container ">
-                            <Form.Item>
-                                <Button htmlType="submit" className="primary-button" shape="round" size="middle" onClick={activateLoading} loading={status} >
-                                    Submit
-                                </Button>
-                            </Form.Item>
-                        </div>
-                        </Form>
-                        <div className="input-container">
-                            <Divider>Or sign in with</Divider>
-                        </div>
-                        <div className="social-login-container input-container">
-                            <div><img src={facebook} alt="facebook" className="social-icon"/></div>
-                            <div><img src={twitter} alt="twitter" className="social-icon"/></div>
-                            <div><img src={google} alt="google" className="social-icon"/></div>
-                        </div>
-                        <div className="term-and condi">
-                            <p>By using easyRENT, you agree to our Terms<br/>
-                            ,Data Policy and Cookies Policy . 
-                            </p>
-                        </div>
-                    </div>
-                </Col>
-            </Row>
-        </div>
-    )
-}
-const mapStateToProps=(state)=>{
-    return{
-        ...state
-    }
-}
-export default connect(mapStateToProps,{register, clearErrorMessage})(Register)
+const Register = ({ registerReducer, register, clearErrorMessage }) => {
+	const { isSuccessful, error } = registerReducer;
+	const [status, setStatus] = useState(false);
+	const activateLoading = () => {
+		setStatus(true);
+	};
+	const onFinish = (values) => {
+		register(values);
+		if (isSuccessful) {
+			setStatus(false);
+		}
+	};
+	const onFinishFailed = (errorInfo) => {
+		setStatus(false);
+	};
+	const onChange = () => {
+		clearErrorMessage();
+		setStatus(false);
+	};
+	const responseFacebook = (response) => {
+		console.log(response);
+	};
+	const responseGoogle = (response) => {
+		console.log(response);
+	};
+	return (
+		<div className='sign-up-card-rappers'>
+			<Row gutter={{ xs: 8, sm: 16, md: 24 }} className='sign-up-row'>
+				<Col xs={24} md={24}>
+					<div className='sign-up-container'>
+						<div>
+							<h3>Sign up</h3>
+						</div>
+						<div
+							className={`${
+								error.errMessage ? '' : 'hide-element'
+							} err-message`}
+						>
+							{error.errMessage}
+						</div>
+						<Form
+							name='regform'
+							onFinish={onFinish}
+							onFinishFailed={onFinishFailed}
+						>
+							<div className='input-container'>
+								<Form.Item rules={[{ required: true }]} name='name'>
+									<Input
+										placeholder='Fullname'
+										className='input-box'
+										prefix={<UserOutlined />}
+										allowClear={true}
+										onChange={onChange}
+									/>
+								</Form.Item>
+							</div>
+							<div className='input-container'>
+								<Form.Item
+									rules={[{ required: true, type: 'email' }]}
+									name='email'
+								>
+									<Input
+										placeholder='Email'
+										className='input-box'
+										size='middle'
+										prefix={<MailOutlined />}
+										allowClear={true}
+										onChange={onChange}
+									/>
+								</Form.Item>
+							</div>
+							<div className='input-container'>
+								<Form.Item rules={[{ required: true }]} name='phone'>
+									<Input
+										placeholder='Phone'
+										className='input-box'
+										prefix={<PhoneOutlined />}
+										allowClear={true}
+										onChange={onChange}
+									/>
+								</Form.Item>
+							</div>
+							<div className='input-container'>
+								<Form.Item rules={[{ required: true }]} name='password'>
+									<Input.Password
+										placeholder='Password'
+										className='input-box'
+										allowClear={true}
+										prefix={<LockOutlined />}
+										onChange={onChange}
+									/>
+								</Form.Item>
+							</div>
+							<div className='input-container'>
+								<Form.Item rules={[{ required: true }]} name='confirmPassword'>
+									<Input.Password
+										placeholder='Confirm Password'
+										className='input-box'
+										allowClear={true}
+										prefix={<LockOutlined />}
+										onChange={onChange}
+									/>
+								</Form.Item>
+							</div>
+							<div className='button-container '>
+								<Form.Item>
+									<Button
+										htmlType='submit'
+										className='primary-button'
+										shape='round'
+										size='middle'
+										onClick={activateLoading}
+										loading={status}
+									>
+										Submit
+									</Button>
+								</Form.Item>
+							</div>
+						</Form>
+						<div className='input-container'>
+							<Divider>Or sign in with</Divider>
+						</div>
+						<div className='social-login-container input-container'>
+							<div>
+								<FacebookLogin
+									appId='915689715608678'
+									fields='name,email,picture'
+									callback={responseFacebook}
+									cssClass='my-facebook-button-class'
+									textButton=''
+									icon={
+										<img
+											src={facebook}
+											alt='facebook'
+											className='social-icon'
+										/>
+									}
+								/>
+								{/* <img src={facebook} alt='facebook' className='social-icon' /> */}
+							</div>
+							<div>
+								<img src={twitter} alt='twitter' className='social-icon' />
+							</div>
+							<div>
+								<GoogleLogin
+									clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
+									buttonText=''
+									onSuccess={responseGoogle}
+									onFailure={responseGoogle}
+									cookiePolicy={'single_host_origin'}
+									icon={
+										<img src={google} alt='google' className='social-icon' />
+									}
+								/>
+								,
+								{/* <img src={google} alt='google' className='social-icon' /> */}
+							</div>
+						</div>
+						<div className='term-and condi'>
+							<p>
+								By using easyRENT, you agree to our Terms
+								<br />
+								,Data Policy and Cookies Policy .
+							</p>
+						</div>
+					</div>
+				</Col>
+			</Row>
+		</div>
+	);
+};
+const mapStateToProps = (state) => {
+	return {
+		...state,
+	};
+};
+export default connect(mapStateToProps, { register, clearErrorMessage })(
+	Register
+);

@@ -1,62 +1,68 @@
-.sign-up-card-rappers{
-    padding: 20px;
-    border-radius: 10px;
-    border: 0.5px solid #fff;   
+.sign-up-card-rappers {
+	padding: 20px;
+	border-radius: 10px;
+	border: 0.5px solid #fff;
 }
-.sign-up-row{
-    text-align: center;
-   
+.sign-up-row {
+	text-align: center;
 }
-.input-container{
-    padding: 0.5rem;
+.input-container {
+	padding: 0.5rem;
 }
-.input-box{
-    border-radius: 10px;
+.input-box {
+	border-radius: 10px;
 }
-.sign-up-login-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.sign-up-login-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
-.login-container{
-    margin: 1rem auto;
+.login-container {
+	margin: 1rem auto;
 }
-.social-login-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.social-login-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
-.social-icon{
-    height: 32px;
-    width: 32px;
+.social-icon {
+	height: 32px;
+	width: 32px;
 }
-.social-icon:hover{
-    cursor: pointer;
+.social-icon:hover {
+	cursor: pointer;
 }
-.login-link{
-    color: #A8EB12;
-    margin: 0 5px;
+.login-link {
+	color: #a8eb12;
+	margin: 0 5px;
 }
-.login-link:hover{
-    color: #A8EB12;
-    background-color: #333;
-    border-color: #333;
+.login-link:hover {
+	color: #a8eb12;
+	background-color: #333;
+	border-color: #333;
 }
-.login-link:active{
-    color: #A8EB12;
+.login-link:active {
+	color: #a8eb12;
 }
- .ant-form-item{
-    margin-bottom: 0px;
-} 
- .ant-form-item-has-error .ant-form-item-explain{
-    display: none;
-} 
-.ant-form-item-has-error .ant-form-item-explain, .ant-form-item-has-error .ant-form-item-split{
-    display: none;
-} 
-.err-message{
-    color: red;
+.ant-form-item {
+	margin-bottom: 0px;
 }
-.err-message::first-letter{
-    text-transform: uppercase;
+.ant-form-item-has-error .ant-form-item-explain {
+	display: none;
+}
+.ant-form-item-has-error .ant-form-item-explain,
+.ant-form-item-has-error .ant-form-item-split {
+	display: none;
+}
+.err-message {
+	color: red;
+}
+.err-message::first-letter {
+	text-transform: uppercase;
+}
+.my-facebook-button-class {
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: 0;
 }
