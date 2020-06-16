@@ -66,3 +66,18 @@
 	background: none;
 	border: 0;
 }
+.google-login {
+	padding: 0 !important;
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+.google-login div {
+	display: none;
+	background: none !important;
+}
+.google-login span {
+	background: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}

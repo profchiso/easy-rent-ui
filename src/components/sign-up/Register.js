@@ -169,17 +169,15 @@ const Register = ({ registerReducer, register, clearErrorMessage }) => {
 							</div>
 							<div>
 								<GoogleLogin
-									clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
-									buttonText=''
+									clientId={
+										'658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
+									}
 									onSuccess={responseGoogle}
 									onFailure={responseGoogle}
-									cookiePolicy={'single_host_origin'}
-									icon={
-										<img src={google} alt='google' className='social-icon' />
-									}
-								/>
-								,
-								{/* <img src={google} alt='google' className='social-icon' /> */}
+									className='google-login'
+								>
+									<img src={google} alt='google' className='social-icon' />
+								</GoogleLogin>
 							</div>
 						</div>
 						<div className='term-and condi'>
