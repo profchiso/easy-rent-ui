@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 //packages
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
+import TwitterLogin from 'react-twitter-login';
 
 import { connect } from 'react-redux';
 
@@ -43,12 +44,17 @@ const Register = ({ registerReducer, register, clearErrorMessage }) => {
 		clearErrorMessage();
 		setStatus(false);
 	};
-	const responseFacebook = (response) => {
+	const responseFromFacebook = (response) => {
 		console.log(response);
 	};
-	const responseGoogle = (response) => {
+	const responseFromGoogle = (response) => {
 		console.log(response);
 	};
+
+	const responseFromTwitter = (err, data) => {
+		console.log(err, data);
+	};
+
 	return (
 		<div className='sign-up-card-rappers'>
 			<Row gutter={{ xs: 8, sm: 16, md: 24 }} className='sign-up-row'>
@@ -151,7 +157,7 @@ const Register = ({ registerReducer, register, clearErrorMessage }) => {
 								<FacebookLogin
 									appId='915689715608678'
 									fields='name,email,picture'
-									callback={responseFacebook}
+									callback={responseFromFacebook}
 									cssClass='my-facebook-button-class'
 									textButton=''
 									icon={
@@ -162,18 +168,24 @@ const Register = ({ registerReducer, register, clearErrorMessage }) => {
 										/>
 									}
 								/>
-								{/* <img src={facebook} alt='facebook' className='social-icon' /> */}
 							</div>
 							<div>
-								<img src={twitter} alt='twitter' className='social-icon' />
+								<TwitterLogin
+									authCallback={responseFromTwitter}
+									consumerKey={'CONSUMER_KEY'}
+									consumerSecret={'CONSUMER_SECRET'}
+									callbackUrl={'CALLBACK_URL'}
+								>
+									<img src={twitter} alt='twitter' className='social-icon' />
+								</TwitterLogin>
 							</div>
 							<div>
 								<GoogleLogin
 									clientId={
 										'658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
 									}
-									onSuccess={responseGoogle}
-									onFailure={responseGoogle}
+									onSuccess={responseFromGoogle}
+									onFailure={responseFromGoogle}
 									className='google-login'
 								>
 									<img src={google} alt='google' className='social-icon' />

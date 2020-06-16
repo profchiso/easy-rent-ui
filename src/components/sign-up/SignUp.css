@@ -81,3 +81,11 @@
 	padding: 0 !important;
 	margin: 0 !important;
 }
+.google-login:focus,
+.google-login:hover,
+.google-login:active,
+.my-facebook-button-class:focus,
+.my-facebook-button-class:hover,
+.my-facebook-button-class:active {
+	outline: 0;
+}
