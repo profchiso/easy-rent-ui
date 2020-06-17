@@ -34,10 +34,17 @@
 	}
 	.plan {
 		margin: 20px 0;
-		padding-bottom: 2px solid #fff;
+		border: 2px solid #fff !important;
 		padding: 2px;
 	}
 	.includes {
 		display: none;
+	}
+	.addon {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.plans-wrapper {
+		border: none;
 	}
 }
