@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //npm packages
 import { Link } from 'react-router-dom';
@@ -6,7 +6,12 @@ import { Link } from 'react-router-dom';
 //components
 import { Typography, Form, Row, Col, Input, Button } from 'antd';
 import logo from '../../img/rental.png';
-import { MailOutlined, UserOutlined, PhoneOutlined } from '@ant-design/icons';
+import {
+	MailOutlined,
+	UserOutlined,
+	PhoneOutlined,
+	InfoCircleOutlined,
+} from '@ant-design/icons';
 import Footer from '../common/Footer/Footer';
 
 //styles
@@ -14,9 +19,20 @@ import './Support.css';
 
 //constants
 const { Text, Title } = Typography;
-const { TextArea } = Input;
 
 const Support = () => {
+	const [status, setStatus] = useState(false);
+	const activateLoading = () => {
+		setStatus(true);
+	};
+
+	const onFinish = (values) => {
+		console.log(values);
+	};
+	const onFinishFailed = (errorInfo) => {
+		console.log(errorInfo);
+		setStatus(false);
+	};
 	return (
 		<div className='app-container'>
 			<div className='content-container'>
@@ -38,16 +54,20 @@ const Support = () => {
 					</Text>
 				</div>
 				<div className='sign-up-card-rappers'>
-					<div className='row-separator'>
-						<Form name='regform' onFinish={''} onFinishFailed={''}>
+					<Form
+						name='contactform'
+						onFinish={onFinish}
+						onFinishFailed={onFinishFailed}
+					>
+						<div className='row-separator'>
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={12} className='support-column'>
 									<Form.Item
 										rules={[{ required: true, type: 'text' }]}
-										name='email'
+										name='name'
 									>
 										<Input
-											placeholder='Name'
+											placeholder='John Doe'
 											className='input-box'
 											size='middle'
 											prefix={<UserOutlined />}
@@ -72,38 +92,34 @@ const Support = () => {
 									</Form.Item>
 								</Col>
 							</Row>
-						</Form>
-					</div>
-					<div className='row-separator'>
-						<Form name='regform' onFinish={''} onFinishFailed={''}>
+						</div>
+						<div className='row-separator'>
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={24}>
 									<Form.Item
-										rules={[{ required: true, type: 'email' }]}
-										name='email'
+										rules={[{ required: true, type: 'text' }]}
+										name='subject'
 									>
 										<Input
 											placeholder='Subject'
 											className='input-box subject-input'
 											size='middle'
-											prefix={<MailOutlined />}
+											prefix={<InfoCircleOutlined />}
 											allowClear={true}
 											onChange={''}
 										/>
 									</Form.Item>
 								</Col>
 							</Row>
-						</Form>
-					</div>
-					<div className='row-separator'>
-						<Form name='regform' onFinish={''} onFinishFailed={''}>
+						</div>
+						<div className='row-separator'>
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={24}>
 									<Form.Item
-										rules={[{ required: true, type: 'email' }]}
-										name='email'
+										rules={[{ required: true, type: 'text' }]}
+										name='message'
 									>
-										<TextArea
+										<Input.TextArea
 											placeholder='Your message'
 											className='input-box subject-input'
 											size='middle'
@@ -115,20 +131,22 @@ const Support = () => {
 									</Form.Item>
 								</Col>
 							</Row>
-						</Form>
-					</div>
-					<div className='row-separator'>
-						<Button
-							htmlType='submit'
-							className='primary-button'
-							shape='round'
-							size='middle'
-							onClick={''}
-							loading={''}
-						>
-							Send
-						</Button>
-					</div>
+						</div>
+						<div className='row-separator'>
+							<Form.Item>
+								<Button
+									htmlType='submit'
+									className='primary-button'
+									shape='round'
+									size='middle'
+									onClick={activateLoading}
+									loading={status}
+								>
+									Send
+								</Button>
+							</Form.Item>
+						</div>
+					</Form>
 				</div>
 				<div className='row-separator phone-contact'>
 					<PhoneOutlined className='phone-icon' />
