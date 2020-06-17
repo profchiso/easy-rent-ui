@@ -33,62 +33,111 @@ const Pricing = () => {
 				<div className='row-separator mobile-seperator'>
 					<Title level={2}>Choose a plan</Title>
 				</div>
-				<div className='sign-up-card-rappers'>
+				<div className='sign-up-card-rappers plans-wrapper'>
 					<div className='row-separator'>
 						<div className='plan-container'>
-							<div>Free</div>
-							<div>Silver</div>
-							<div>Gold</div>
-							<div>Diamond</div>
+							<div className='includes'>Includes</div>
+							<div className='plan'>
+								<div className='plan-title silver'>Silver</div>
+								<div className='addon'>
+									<div className='addon-name'>No of Upload</div>
+									<div className='addon-value'>10</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Expires</div>
+									<div className='addon-value'>30 days</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Verification</div>
+									<div className='addon-value'>N0</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Featured</div>
+									<div className='addon-value'>N0</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Price</div>
+									<div className='addon-value'>10,000</div>
+								</div>
+								<div className='addon'>
+									<Button
+										htmlType='submit'
+										className='primary-button'
+										shape='round'
+										block
+									>
+										Checkout plan
+									</Button>
+								</div>
+							</div>
+							<div className='plan'>
+								<div className='plan-title gold'>Gold</div>
+								<div className='addon'>
+									<div className='addon-name'>No of Upload</div>
+									<div className='addon-value'>20</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Expires</div>
+									<div className='addon-value'>30 days</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Verification</div>
+									<div className='addon-value'>N0</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Featured</div>
+									<div className='addon-value'>N0</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Price</div>
+									<div className='addon-value'>20,000</div>
+								</div>
+								<div className='addon'>
+									<Button
+										htmlType='submit'
+										className='primary-button'
+										shape='round'
+										block
+									>
+										Checkout plan
+									</Button>
+								</div>
+							</div>
+							<div className='plan'>
+								<div className='plan-title diamond'>Diamond</div>
+								<div className='addon'>
+									<div className='addon-name'>No of Upload</div>
+									<div className='addon-value'>50</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Expires</div>
+									<div className='addon-value'>30 days</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Verification</div>
+									<div className='addon-value'>Yes</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Featured</div>
+									<div className='addon-value'>Yes</div>
+								</div>
+								<div className='addon'>
+									<div className='addon-name'>Price</div>
+									<div className='addon-value'>40,000</div>
+								</div>
+								<div className='addon'>
+									<Button
+										htmlType='submit'
+										className='primary-button'
+										shape='round'
+										block
+									>
+										Checkout plan
+									</Button>
+								</div>
+							</div>
 						</div>
-						{/* <Form name='regform' onFinish={''} onFinishFailed={''}>
-							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
-								<Col xs={24} md={6} className='support-column'>
-									<Form.Item
-										rules={[{ required: true, type: 'text' }]}
-										name='email'
-									>
-										<Input
-											placeholder='Name'
-											className='input-box'
-											size='middle'
-											prefix={<UserOutlined />}
-											allowClear={true}
-											onChange={''}
-										/>
-									</Form.Item>
-								</Col>
-								<Col xs={24} md={6} className=''>
-									<Form.Item
-										rules={[{ required: true, type: 'email' }]}
-										name='email'
-									>
-										<Input
-											placeholder='johndoe@mail.com'
-											className='input-box'
-											size='middle'
-											prefix={<MailOutlined />}
-											allowClear={true}
-											onChange={''}
-										/>
-									</Form.Item>
-								</Col>
-							</Row>
-						</Form> */}
 					</div>
-
-					{/* <div className='row-separator'>
-						<Button
-							htmlType='submit'
-							className='primary-button'
-							shape='round'
-							size='middle'
-							onClick={''}
-							loading={''}
-						>
-							Send
-						</Button>
-					</div> */}
 				</div>
 				<div className='row-separator phone-contact'>
 					<PhoneOutlined className='phone-icon' />
