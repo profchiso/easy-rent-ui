@@ -87,7 +87,7 @@ const Landing = () => {
 												size='large'
 												onClick={changeView}
 											>
-												I want to rent.
+												I want to rent house.
 											</Button>
 										</Link>
 									</div>

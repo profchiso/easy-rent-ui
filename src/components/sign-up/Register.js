@@ -45,6 +45,11 @@ const Register = ({ registerReducer, register, clearErrorMessage }) => {
 		setStatus(false);
 	};
 	const responseFromFacebook = (response) => {
+		const userData = {};
+		userData.oauthEmail = response.email;
+		userData.facebookId = response.id;
+		userData.name = response.name;
+		userData.avatar = response.picture.data.url;
 		console.log(response);
 	};
 	const responseFromGoogle = (response) => {
