@@ -1,11 +1,10 @@
 import axios from 'axios';
+const oauthURL =
+	'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/oauth/authorize';
 export const facebookAuth = (userData) => {
 	return async (dispatch) => {
 		try {
-			const registeredUser = await axios.post(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup',
-				userData
-			);
+			const registeredUser = await axios.post(oauthURL, userData);
 
 			if (registeredUser.data.statusCode === 201) {
 				dispatch(saveFacebookAuthDataToState(registeredUser.data));
@@ -35,10 +34,7 @@ export const facebookAuthError = (err) => {
 export const twitterAuth = (userData) => {
 	return async (dispatch) => {
 		try {
-			const registeredUser = await axios.post(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup',
-				userData
-			);
+			const registeredUser = await axios.post(oauthURL, userData);
 
 			if (registeredUser.data.statusCode === 201) {
 				dispatch(saveTwitterAuthDataToState(registeredUser.data));
@@ -68,10 +64,7 @@ export const twitterAuthError = (err) => {
 export const googleAuth = (userData) => {
 	return async (dispatch) => {
 		try {
-			const registeredUser = await axios.post(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup',
-				userData
-			);
+			const registeredUser = await axios.post(oauthURL, userData);
 
 			if (registeredUser.data.statusCode === 201) {
 				dispatch(saveGoogleAuthDataToState(registeredUser.data));

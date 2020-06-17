@@ -16,6 +16,11 @@ import {
 	LockOutlined,
 } from '@ant-design/icons';
 import { register, clearErrorMessage } from '../../actions/userAccountAction';
+import {
+	facebookAuth,
+	twitterAuth,
+	googleAuth,
+} from '../../actions/oauthActions';
 
 import facebook from '../../img/facebook.png';
 import twitter from '../../img/twitter.png';
@@ -25,7 +30,12 @@ import google from '../../img/google.png';
 
 //constants
 
-const Register = ({ registerReducer, register, clearErrorMessage }) => {
+const Register = ({
+	registerReducer,
+	register,
+	clearErrorMessage,
+	oauthReducer,
+}) => {
 	const { isSuccessful, error } = registerReducer;
 	const [status, setStatus] = useState(false);
 	const activateLoading = () => {
@@ -51,6 +61,7 @@ const Register = ({ registerReducer, register, clearErrorMessage }) => {
 		userData.name = response.name;
 		userData.avatar = response.picture.data.url;
 		console.log(response);
+		facebookAuth(userData);
 	};
 	const responseFromGoogle = (response) => {
 		console.log(response);
@@ -215,6 +226,10 @@ const mapStateToProps = (state) => {
 		...state,
 	};
 };
-export default connect(mapStateToProps, { register, clearErrorMessage })(
-	Register
-);
+export default connect(mapStateToProps, {
+	register,
+	clearErrorMessage,
+	facebookAuth,
+	twitterAuth,
+	googleAuth,
+})(Register);

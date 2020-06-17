@@ -3,7 +3,6 @@ const initialState = {
 	user: {},
 	isSuccessful: false,
 	error: {},
-	passwordResetResponse: {},
 };
 
 export const oauthReducer = (state = initialState, actions) => {
