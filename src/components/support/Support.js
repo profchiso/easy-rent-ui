@@ -14,6 +14,7 @@ import './Support.css';
 
 //constants
 const { Text, Title } = Typography;
+const { TextArea } = Input;
 
 const Support = () => {
 	return (
@@ -102,13 +103,14 @@ const Support = () => {
 										rules={[{ required: true, type: 'email' }]}
 										name='email'
 									>
-										<Input
+										<TextArea
 											placeholder='Your message'
 											className='input-box subject-input'
 											size='middle'
 											prefix={<MailOutlined />}
 											allowClear={true}
 											onChange={''}
+											rows={4}
 										/>
 									</Form.Item>
 								</Col>
