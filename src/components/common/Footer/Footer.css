@@ -22,3 +22,9 @@
 	background-color: #a8eb12;
 	border-right: 3px solid #333;
 }
+@media screen and (max-width: 768px) {
+	.footer-link {
+		padding-right: 0;
+		margin-left: 10px;
+	}
+}
