@@ -36,7 +36,7 @@ const Pricing = () => {
 				<div className='sign-up-card-rappers plans-wrapper'>
 					<div className='row-separator'>
 						<div className='plan-container'>
-							<div className='includes'>Includes</div>
+							{/* <div className='includes'>Includes</div> */}
 							<div className='plan'>
 								<div className='plan-title silver'>Silver</div>
 								<div className='addon'>
@@ -59,7 +59,7 @@ const Pricing = () => {
 									<div className='addon-name'>Price</div>
 									<div className='addon-value'>10,000</div>
 								</div>
-								<div className='addon'>
+								<div className='addon checkout-btn-container'>
 									<Button
 										htmlType='submit'
 										className='primary-button'
@@ -92,7 +92,7 @@ const Pricing = () => {
 									<div className='addon-name'>Price</div>
 									<div className='addon-value'>20,000</div>
 								</div>
-								<div className='addon'>
+								<div className='addon checkout-btn-container'>
 									<Button
 										htmlType='submit'
 										className='primary-button'
@@ -125,7 +125,7 @@ const Pricing = () => {
 									<div className='addon-name'>Price</div>
 									<div className='addon-value'>40,000</div>
 								</div>
-								<div className='addon'>
+								<div className='addon checkout-btn-container'>
 									<Button
 										htmlType='submit'
 										className='primary-button'
