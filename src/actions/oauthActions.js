@@ -2,6 +2,7 @@ import axios from 'axios';
 const oauthURL =
 	'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/oauth/authorize';
 export const facebookAuth = (userData) => {
+	console.log(userData);
 	return async (dispatch) => {
 		try {
 			const registeredUser = await axios.post(oauthURL, userData);

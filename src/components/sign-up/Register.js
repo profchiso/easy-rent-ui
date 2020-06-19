@@ -34,10 +34,14 @@ const Register = ({
 	registerReducer,
 	register,
 	clearErrorMessage,
-	oauthReducer,
+	facebookAuth,
+	twitterAuth,
+	googleAuth,
 }) => {
 	const { isSuccessful, error } = registerReducer;
 	const [status, setStatus] = useState(false);
+	const [isOauthSuccessfu, setIsOauthSuccessful] = useState(false);
+
 	const activateLoading = () => {
 		setStatus(true);
 	};
@@ -56,15 +60,23 @@ const Register = ({
 	};
 	const responseFromFacebook = (response) => {
 		const userData = {};
+		console.log('response from facebook', response);
 
-		if (response) {
-			userData.oauthEmail = response.email;
-			userData.facebookId = response.id;
-			userData.name = response.name;
-			userData.avatar = response.picture.data.url;
-			console.log(userData);
-			facebookAuth(userData);
-		}
+		// if (response.email !== '') {
+		// 	setIsOauthSuccessful(true);
+		// 	if (isOauthSuccessfu) {
+		// 		userData.oauthEmail = response.email;
+		// 		userData.facebookId = response.id;
+		// 		userData.name = response.name;
+		// 		userData.avatar = response.picture.data.url;
+		// 		console.log(userData);
+
+		// 		localStorage.setItem('user', JSON.stringify(response.accessToken));
+		// 		localStorage.setItem('token', JSON.stringify(userData.email));
+
+		// 		facebookAuth(userData);
+		// 	}
+		// }
 	};
 	const responseFromGoogle = (response) => {
 		console.log(response);
@@ -168,10 +180,10 @@ const Register = ({
 								</Form.Item>
 							</div>
 						</Form>
-						<div className='input-container'>
+						{/* <div className='input-container'>
 							<Divider>Or sign in with</Divider>
-						</div>
-						<div className='social-login-container input-container'>
+						</div> */}
+						{/* <div className='social-login-container input-container'>
 							<div>
 								<FacebookLogin
 									appId='915689715608678'
@@ -210,7 +222,7 @@ const Register = ({
 									<img src={google} alt='google' className='social-icon' />
 								</GoogleLogin>
 							</div>
-						</div>
+						</div> */}
 						<div className='term-and condi'>
 							<p>
 								By using easyRENT, you agree to our Terms
