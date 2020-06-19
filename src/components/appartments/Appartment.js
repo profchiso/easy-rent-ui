@@ -63,7 +63,7 @@ const Appartment = () => {
 			<Row>
 				<Col xs={24} md={5}>
 					<Affix>
-						<div className='filter-pane'>
+						<div className='filter-pane  dashboard-filter-pane'>
 							<div className='app-name '>
 								<Link to='/'>
 									<h1 className='easy-rent-text  easy-rent-text-mobile'>
@@ -73,7 +73,7 @@ const Appartment = () => {
 								</Link>
 							</div>
 							<div className='drawer-container filter-on-big-screen'>
-								<div className='sign-up-card-rappers filter-pane-box'>
+								<div className='sign-up-card-rappers filter-pane-box appartment-filter-pane'>
 									<div className='sign-up-container '>
 										<div>
 											<h3>Customize your search</h3>
