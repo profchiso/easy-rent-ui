@@ -64,7 +64,7 @@ const Appartment = () => {
 				<Col xs={24} md={5}>
 					<Affix>
 						<div className='filter-pane'>
-							<div className=' '>
+							<div className='app-name '>
 								<Link to='/'>
 									<h1 className='easy-rent-text  easy-rent-text-mobile'>
 										easy
@@ -227,7 +227,7 @@ const Appartment = () => {
 													</h1>
 												</Link>
 											</div>
-											<div className='sign-up-card-rappers filter-pane-box'>
+											<div className='sign-up-card-rappers filter-pane-box '>
 												<div className='sign-up-container '>
 													<div>
 														<h3>Customize your search</h3>

@@ -6,7 +6,7 @@ export const facebookAuth = (userData) => {
 		try {
 			const registeredUser = await axios.post(oauthURL, userData);
 
-			if (registeredUser.data.statusCode === 201) {
+			if (registeredUser.data.statusCode === 200) {
 				dispatch(saveFacebookAuthDataToState(registeredUser.data));
 			} else {
 				dispatch(facebookAuthError(registeredUser.data));
@@ -36,7 +36,7 @@ export const twitterAuth = (userData) => {
 		try {
 			const registeredUser = await axios.post(oauthURL, userData);
 
-			if (registeredUser.data.statusCode === 201) {
+			if (registeredUser.data.statusCode === 200) {
 				dispatch(saveTwitterAuthDataToState(registeredUser.data));
 			} else {
 				dispatch(twitterAuthError(registeredUser.data));
@@ -66,7 +66,7 @@ export const googleAuth = (userData) => {
 		try {
 			const registeredUser = await axios.post(oauthURL, userData);
 
-			if (registeredUser.data.statusCode === 201) {
+			if (registeredUser.data.statusCode === 200) {
 				dispatch(saveGoogleAuthDataToState(registeredUser.data));
 			} else {
 				dispatch(googleAuthError(registeredUser.data));

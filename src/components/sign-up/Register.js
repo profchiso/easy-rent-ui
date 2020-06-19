@@ -56,12 +56,15 @@ const Register = ({
 	};
 	const responseFromFacebook = (response) => {
 		const userData = {};
-		userData.oauthEmail = response.email;
-		userData.facebookId = response.id;
-		userData.name = response.name;
-		userData.avatar = response.picture.data.url;
-		console.log(response);
-		facebookAuth(userData);
+
+		if (response) {
+			userData.oauthEmail = response.email;
+			userData.facebookId = response.id;
+			userData.name = response.name;
+			userData.avatar = response.picture.data.url;
+			console.log(userData);
+			facebookAuth(userData);
+		}
 	};
 	const responseFromGoogle = (response) => {
 		console.log(response);
