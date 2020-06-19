@@ -60,9 +60,9 @@ const Dashboard = ({ registerReducer, logout }) => {
 			<Row>
 				<Col xs={24} md={5}>
 					<Affix>
-						<div className='filter-pane'>
+						<div className='filter-pane dashboard-filter-pane'>
 							<div className='drawer-container'>
-								<div className='drawer-header'>
+								<div className='drawer-header dashboard-drawer-header'>
 									<Link to='/'>
 										<h1 className='easy-rent-text  easy-rent-text-mobile'>
 											easy
@@ -74,7 +74,11 @@ const Dashboard = ({ registerReducer, logout }) => {
 									</h1>
 								</div>
 								<div className='ant-menu-container'>
-									<Menu onClick={handleClick} mode='inline'>
+									<Menu
+										onClick={handleClick}
+										mode='inline'
+										className='mobile-ant-menu'
+									>
 										<SubMenu
 											key='sub1'
 											title={

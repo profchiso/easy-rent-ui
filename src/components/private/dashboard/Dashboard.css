@@ -76,6 +76,9 @@
 .mobile-ant-menu {
 	padding: 10px;
 }
+.dashboard-filter-pane {
+	padding: 0 !important;
+}
 @media screen and (max-width: 768px) {
 	.center {
 		text-align: center;
