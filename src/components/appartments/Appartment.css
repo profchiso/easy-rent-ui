@@ -74,9 +74,7 @@
 	background-color: #18c1a9;
 	padding: 10px;
 }
-.footer-container {
-	background-color: #18c1a9;
-}
+
 .filter-pane-box {
 	margin-top: 10px;
 	text-align: left;
@@ -102,12 +100,13 @@
 	width: 100%;
 	padding-right: 10px;
 	background-color: #18c1a9;
+	background-color: #18c1a9;
 }
 .app-name {
 	padding: 10px;
 }
 .sign-up-card-rappers {
-	margin: 10px;
+	/* margin: 10px; */
 	padding: 10px;
 }
 @media screen and (max-width: 768px) {
