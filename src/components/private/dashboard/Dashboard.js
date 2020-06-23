@@ -28,6 +28,7 @@ import UpdateProfile from './UpdateProfile';
 import ChangePassword from './ChangePassword';
 import EditAppartment from './EditAppartment';
 import { logout } from '../../../actions/userAccountAction';
+import { updatePassword } from '../../../actions/dashboardActions';
 
 //styles
 import './Dashboard.css';
@@ -35,7 +36,7 @@ import './Dashboard.css';
 //constants
 const { SubMenu } = Menu;
 
-const Dashboard = ({ registerReducer, logout }) => {
+const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 	const [drawerVisible, setDrawerVisible] = useState(false);
 	const [view, setView] = useState('all-appartment');
 	const showDrawer = () => {
@@ -488,4 +489,4 @@ const mapStateToProps = (state) => {
 		...state,
 	};
 };
-export default connect(mapStateToProps, { logout })(Dashboard);
+export default connect(mapStateToProps, { logout, updatePassword })(Dashboard);

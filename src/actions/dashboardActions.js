@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://easy-rent-api.herokuapp.com/easy-rent/api/v1';
 
-export const updatePassword = () => {
+export const updatePassword = (userData) => {
 	return async (dispatch) => {
 		try {
 			const appartments = await axios.patch(
