@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 //components
-import { Input, Button, Row, Col, Divider, Form } from 'antd';
+import { Input, Button, Row, Col, Form } from 'antd';
 import {
 	UserOutlined,
 	MailOutlined,
