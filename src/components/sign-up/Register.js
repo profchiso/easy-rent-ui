@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 //packages
-import FacebookLogin from 'react-facebook-login';
-import GoogleLogin from 'react-google-login';
-import TwitterLogin from 'react-twitter-login';
+// import FacebookLogin from 'react-facebook-login';
+// import GoogleLogin from 'react-google-login';
+// import TwitterLogin from 'react-twitter-login';
 
 import { connect } from 'react-redux';
 
@@ -22,9 +22,9 @@ import {
 	googleAuth,
 } from '../../actions/oauthActions';
 
-import facebook from '../../img/facebook.png';
-import twitter from '../../img/twitter.png';
-import google from '../../img/google.png';
+// import facebook from '../../img/facebook.png';
+// import twitter from '../../img/twitter.png';
+// import google from '../../img/google.png';
 
 //styles
 
@@ -40,7 +40,7 @@ const Register = ({
 }) => {
 	const { isSuccessful, error } = registerReducer;
 	const [status, setStatus] = useState(false);
-	const [isOauthSuccessfu, setIsOauthSuccessful] = useState(false);
+	//const [isOauthSuccessfu, setIsOauthSuccessful] = useState(false);
 
 	const activateLoading = () => {
 		setStatus(true);
@@ -58,33 +58,33 @@ const Register = ({
 		clearErrorMessage();
 		setStatus(false);
 	};
-	const responseFromFacebook = (response) => {
-		const userData = {};
-		console.log('response from facebook', response);
+	// const responseFromFacebook = (response) => {
+	// 	const userData = {};
+	// 	console.log('response from facebook', response);
 
-		// if (response.email !== '') {
-		// 	setIsOauthSuccessful(true);
-		// 	if (isOauthSuccessfu) {
-		// 		userData.oauthEmail = response.email;
-		// 		userData.facebookId = response.id;
-		// 		userData.name = response.name;
-		// 		userData.avatar = response.picture.data.url;
-		// 		console.log(userData);
+	// if (response.email !== '') {
+	// 	setIsOauthSuccessful(true);
+	// 	if (isOauthSuccessfu) {
+	// 		userData.oauthEmail = response.email;
+	// 		userData.facebookId = response.id;
+	// 		userData.name = response.name;
+	// 		userData.avatar = response.picture.data.url;
+	// 		console.log(userData);
 
-		// 		localStorage.setItem('user', JSON.stringify(response.accessToken));
-		// 		localStorage.setItem('token', JSON.stringify(userData.email));
+	// 		localStorage.setItem('user', JSON.stringify(response.accessToken));
+	// 		localStorage.setItem('token', JSON.stringify(userData.email));
 
-		// 		facebookAuth(userData);
-		// 	}
-		// }
-	};
-	const responseFromGoogle = (response) => {
-		console.log(response);
-	};
+	// 		facebookAuth(userData);
+	// 	}
+	// }
+	//};
+	// const responseFromGoogle = (response) => {
+	// 	console.log(response);
+	// };
 
-	const responseFromTwitter = (err, data) => {
-		console.log(err, data);
-	};
+	// const responseFromTwitter = (err, data) => {
+	// 	console.log(err, data);
+	// };
 
 	return (
 		<div className='sign-up-card-rappers'>

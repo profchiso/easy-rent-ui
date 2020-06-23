@@ -5,8 +5,9 @@ const BASE_URL = 'https://easy-rent-api.herokuapp.com/easy-rent/api/v1';
 export const updatePassword = (userData) => {
 	return async (dispatch) => {
 		try {
-			const appartments = await axios.patch(
+			const res = await axios.patch(
 				`${BASE_URL}/users/update-password`,
+				userData,
 				{
 					method: 'PATCH',
 					headers: {
@@ -15,8 +16,9 @@ export const updatePassword = (userData) => {
 					},
 				}
 			);
+			console.log(res);
 
-			dispatch(setUpdatePasswordData(appartments));
+			//dispatch(setUpdatePasswordData(res));
 		} catch (error) {
 			console.log(error);
 		}

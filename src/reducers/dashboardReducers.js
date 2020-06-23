@@ -11,10 +11,7 @@ export const dashboardReducers = (state = initialState, actions) => {
 	console.log(type);
 	console.log(payload);
 
-	if (
-		type === 'SET_UPDATE_PASSWORD_DATA' ||
-		type === 'SAVE_LOGGED_IN_USER_DATA'
-	) {
+	if (type === 'SET_UPDATE_PASSWORD_DATA') {
 		localStorage.setItem('token', JSON.stringify(payload.token));
 		localStorage.setItem('user', JSON.stringify(payload.user));
 		return {
