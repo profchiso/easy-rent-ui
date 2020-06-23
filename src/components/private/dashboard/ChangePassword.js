@@ -14,14 +14,20 @@ import './Dashboard.css';
 
 //constants
 
-const ChangePassword = ({ updatePassword }) => {
+const ChangePassword = ({ updatePassword, dashboardReducers }) => {
+	const { isPasswordUpdated } = dashboardReducers;
 	const [status, setStatus] = useState(false);
 	const onFinish = (values) => {
 		updatePassword(values);
-		console.log(values);
+		if (isPasswordUpdated) {
+			setStatus(false);
+		}
 	};
 	const onFinishFailed = (errorInfo) => {
 		console.log(errorInfo);
+		if (errorInfo.errorFields.length > 0) {
+			setStatus(false);
+		}
 	};
 	const activateLoading = () => {
 		setStatus(true);
@@ -30,7 +36,7 @@ const ChangePassword = ({ updatePassword }) => {
 		<div className='sign-up-card-rappers'>
 			<div className='sign-up-container'>
 				<div>
-					<h3>Change password</h3>
+					<h3 className='operation-title'>Change password</h3>
 				</div>
 				<Form
 					name='updatePasswordForm'
@@ -69,7 +75,7 @@ const ChangePassword = ({ updatePassword }) => {
 							onClick={activateLoading}
 							loading={status}
 						>
-							Submit
+							{isPasswordUpdated ? 'Password updated' : 'Submit'}
 						</Button>
 					</div>
 				</Form>

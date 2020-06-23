@@ -370,13 +370,13 @@ const Appartment = () => {
 										₦
 									</span>
 								</div>
-								<div className='price'>250,000</div>
+								<div className='price'>450,000</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<EnvironmentOutlined />
 								</div>
-								<div>126 isawo road abule ago</div>
+								<div>4 bale ave V.I</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
@@ -412,7 +412,7 @@ const Appartment = () => {
 								<div className='description-icon'>
 									<EnvironmentOutlined />
 								</div>
-								<div>126 isawo road abule ago</div>
+								<div>13 Benson Road Orile</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
@@ -442,13 +442,13 @@ const Appartment = () => {
 								<div className='description-icon'>
 									<DollarOutlined />
 								</div>
-								<div className='price'>250,000</div>
+								<div className='price'>200,000</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<EnvironmentOutlined />
 								</div>
-								<div>126 isawo road abule ago</div>
+								<div>34 isawo road abule Ikorodu</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
@@ -478,13 +478,13 @@ const Appartment = () => {
 								<div className='description-icon'>
 									<DollarOutlined />
 								</div>
-								<div className='price'>250,000</div>
+								<div className='price'>200,000</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<EnvironmentOutlined />
 								</div>
-								<div>126 isawo road abule ago</div>
+								<div>35 Deji street ketu</div>
 							</div>
 							<div className='card-descriptions'>
 								<div className='description-icon'>

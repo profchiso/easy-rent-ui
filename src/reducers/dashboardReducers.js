@@ -4,6 +4,7 @@ const initialState = {
 	isSuccessful: false,
 	error: {},
 	passwordResetResponse: {},
+	isPasswordUpdated: false,
 };
 
 export const dashboardReducers = (state = initialState, actions) => {
@@ -13,35 +14,22 @@ export const dashboardReducers = (state = initialState, actions) => {
 
 	if (type === 'SET_UPDATE_PASSWORD_DATA') {
 		localStorage.setItem('token', JSON.stringify(payload.token));
-		localStorage.setItem('user', JSON.stringify(payload.user));
+
 		return {
 			...state,
 			token: payload.token,
-			user: payload.user,
 			isSuccessful: true,
 			error: {},
+			isPasswordUpdated: true,
 		};
-	} else if (type === 'REGISTRATION_ERROR' || type === 'LOGIN_ERROR') {
-		localStorage.removeItem('token');
-		localStorage.removeItem('user');
+	} else if (type === 'SET_UPDATE_PASSWORD_ERROR') {
+		// localStorage.removeItem('token');
+		// localStorage.removeItem('user');
 		return {
 			...state,
 			error: payload,
-			isSuccessful: true,
-		};
-	} else if (type === 'LOGOUT') {
-		localStorage.removeItem('token');
-		localStorage.removeItem('user');
-		return {
-			...state,
-			user: {},
 			isSuccessful: false,
-			token: '',
-		};
-	} else if (type === 'SET_PASSWORD_RESET_RESPONSE') {
-		return {
-			...state,
-			passwordResetResponse: payload,
+			isPasswordUpdated: false,
 		};
 	} else if (type === 'CLEAR_ERROR_MESSAGE') {
 		return {

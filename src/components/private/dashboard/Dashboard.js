@@ -266,7 +266,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<div className='description-icon'>
 										<EnvironmentOutlined />
 									</div>
-									<div>126 isawo road abule ago</div>
+									<div>233 IKD road Ilupeju</div>
 								</div>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
@@ -313,13 +313,13 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<div className='description-icon'>
 										<DollarOutlined />
 									</div>
-									<div className='price'>250,000</div>
+									<div className='price'>350,000</div>
 								</div>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
 										<EnvironmentOutlined />
 									</div>
-									<div>126 isawo road abule ago</div>
+									<div>1 coca road abule Anthony</div>
 								</div>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
@@ -372,7 +372,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<div className='description-icon'>
 										<EnvironmentOutlined />
 									</div>
-									<div>126 isawo road abule ago</div>
+									<div>100 isawo road Yaba</div>
 								</div>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
@@ -425,7 +425,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<div className='description-icon'>
 										<EnvironmentOutlined />
 									</div>
-									<div>126 isawo road abule ago</div>
+									<div>4 fadeyi street orile</div>
 								</div>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
