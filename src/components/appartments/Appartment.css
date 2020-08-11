@@ -21,7 +21,7 @@
 }
 .card-listing {
 	min-height: 100vh !important;
-	background-color: black;
+	background-color: #eee;
 }
 .appartment-logo-container {
 	padding-top: 1rem;
