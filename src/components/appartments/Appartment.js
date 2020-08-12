@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 //packages
-import { Link } from 'react-router-dom';
-import NaijaStates from 'naija-state-local-government';
+import { Link } from "react-router-dom";
+import NaijaStates from "naija-state-local-government";
 
 //components
-import { Row, Col, Affix, Card, Drawer, Button, Select, Slider } from 'antd';
+import { Row, Col, Affix, Card, Drawer, Button, Select, Slider } from "antd";
 import {
 	EnvironmentOutlined,
 	DollarOutlined,
@@ -13,20 +13,20 @@ import {
 	HomeOutlined,
 	MenuOutlined,
 	CloseOutlined,
-} from '@ant-design/icons';
-import house1 from '../../img/house1.jpg';
-import house2 from '../../img/house2.jpeg';
-import Footer from '../common/Footer/Footer';
+} from "@ant-design/icons";
+import house1 from "../../img/house1.jpg";
+import house2 from "../../img/house2.jpeg";
+import Footer from "../common/Footer/Footer";
 
 //styles
-import './Appartment.css';
+import "./Appartment.css";
 
 //constants
 const { Option } = Select;
 
 const Appartment = () => {
 	const [drawerVisible, setDrawerVisible] = useState(false);
-	const [selectedState, setSelectedState] = useState('abia');
+	const [selectedState, setSelectedState] = useState("abia");
 	const [selectedLGA, setSelectedLGA] = useState();
 	const NIGERIA_STATES = NaijaStates.states();
 
@@ -37,23 +37,23 @@ const Appartment = () => {
 		setDrawerVisible(false);
 	};
 	const onStateChange = (value) => {
-		if (value !== '' && value !== undefined) {
+		if (value !== "" && value !== undefined) {
 			setSelectedState(value);
 		}
 	};
 	const onLGAChange = (value) => {
-		if (value !== '' && value !== undefined) {
+		if (value !== "" && value !== undefined) {
 			setSelectedLGA(value);
 			console.log(selectedLGA);
 		}
 	};
 
 	const onChange = (value) => {
-		console.log('onChange: ', value);
+		console.log("onChange: ", value);
 	};
 
 	const onAfterChange = (value) => {
-		console.log('onAfterChange: ', value);
+		console.log("onAfterChange: ", value);
 	};
 	const onHouseTypeChange = (value) => {
 		console.log(value);
@@ -80,7 +80,9 @@ const Appartment = () => {
 										</div>
 										<div className='input-container filter'>
 											<div>
-												<h4 className='filter-title'>State</h4>
+												<h4 className='filter-title'>
+													State
+												</h4>
 											</div>
 											<div>
 												<Select
@@ -89,21 +91,31 @@ const Appartment = () => {
 													allowClear={true}
 													className='input-box'
 													onSelect={onStateChange}
-													style={{ borderRadius: '20px', width: '100%' }}
-												>
-													{NIGERIA_STATES.map((state) => {
-														return (
-															<Option key={state} value={state}>
-																{state}
-															</Option>
-														);
-													})}
+													style={{
+														borderRadius: "20px",
+														width: "100%",
+													}}>
+													{NIGERIA_STATES.map(
+														(state) => {
+															return (
+																<Option
+																	key={state}
+																	value={
+																		state
+																	}>
+																	{state}
+																</Option>
+															);
+														}
+													)}
 												</Select>
 											</div>
 										</div>
 										<div className='input-container filter'>
 											<div>
-												<h4 className='filter-title'>LGA</h4>
+												<h4 className='filter-title'>
+													LGA
+												</h4>
 											</div>
 											<div>
 												<Select
@@ -112,18 +124,30 @@ const Appartment = () => {
 													onSelect={onLGAChange}
 													allowClear={true}
 													className='input-box'
-													style={{ borderRadius: '20px', width: '100%' }}
-												>
-													{(selectedState !== '' ||
-														selectedState !== undefined) &&
-														NaijaStates.lgas(selectedState).lgas.map(
-															(selectedStateLGAs) => {
+													style={{
+														borderRadius: "20px",
+														width: "100%",
+													}}>
+													{(selectedState !== "" ||
+														selectedState !==
+															undefined) &&
+														NaijaStates.lgas(
+															selectedState
+														).lgas.map(
+															(
+																selectedStateLGAs
+															) => {
 																return (
 																	<Option
-																		key={selectedStateLGAs}
-																		value={selectedStateLGAs}
-																	>
-																		{selectedStateLGAs}
+																		key={
+																			selectedStateLGAs
+																		}
+																		value={
+																			selectedStateLGAs
+																		}>
+																		{
+																			selectedStateLGAs
+																		}
 																	</Option>
 																);
 															}
@@ -133,7 +157,9 @@ const Appartment = () => {
 										</div>
 										<div className='input-container filter'>
 											<div>
-												<h4 className='filter-title'>Price</h4>
+												<h4 className='filter-title'>
+													Price
+												</h4>
 											</div>
 											<div>
 												<Slider
@@ -141,7 +167,9 @@ const Appartment = () => {
 													step={100}
 													defaultValue={[20, 50]}
 													onChange={onChange}
-													onAfterChange={onAfterChange}
+													onAfterChange={
+														onAfterChange
+													}
 													min={0}
 													max={100}
 												/>
@@ -149,7 +177,9 @@ const Appartment = () => {
 										</div>
 										<div className='input-container filter'>
 											<div>
-												<h4 className='filter-title'>Type</h4>
+												<h4 className='filter-title'>
+													Type
+												</h4>
 											</div>
 											<div>
 												<Select
@@ -158,23 +188,31 @@ const Appartment = () => {
 													onSelect={onHouseTypeChange}
 													allowClear={true}
 													className='input-box'
-													style={{ borderRadius: '20px', width: '100%' }}
-												>
-													<Option value='oneRoom'>One room</Option>
+													style={{
+														borderRadius: "20px",
+														width: "100%",
+													}}>
+													<Option value='oneRoom'>
+														One room
+													</Option>
 													<Option value='oneRoomSelfcon'>
 														One room selfcon
 													</Option>
 													<Option value='oneRoomAndParlour'>
 														One room and parlour
 													</Option>
-													<Option value='miniFlat'>Mini flat</Option>
+													<Option value='miniFlat'>
+														Mini flat
+													</Option>
 													<Option value='twoBedroomFlat'>
 														Two bedroom flat
 													</Option>
 													<Option value='threeBedroomFlat'>
 														Three bedroom flat
 													</Option>
-													<Option value='duplex'>Duplex</Option>
+													<Option value='duplex'>
+														Duplex
+													</Option>
 												</Select>
 											</div>
 										</div>
@@ -183,8 +221,7 @@ const Appartment = () => {
 											<Button
 												className='primary-button'
 												shape='round'
-												size='middle'
-											>
+												size='middle'>
 												Filter
 											</Button>
 										</div>
@@ -216,67 +253,114 @@ const Appartment = () => {
 										closable={false}
 										onClose={closeDrawer}
 										visible={drawerVisible}
-										width='90%'
-									>
+										width='90%'>
 										<div className='drawer-container'>
 											<div className='drawer-header filter-drawer-header'>
 												<Link to='/'>
 													<h1 className='easy-rent-text  easy-rent-text-mobile'>
 														easy
-														<span className='rent-color'>RENT</span>
+														<span className='rent-color'>
+															RENT
+														</span>
 													</h1>
 												</Link>
 											</div>
 											<div className='sign-up-card-rappers filter-pane-box '>
 												<div className='sign-up-container '>
 													<div>
-														<h3>Customize your search</h3>
+														<h3>
+															Customize your
+															search
+														</h3>
 													</div>
 													<div className='input-container filter'>
 														<div>
-															<h4 className='filter-title'>State</h4>
+															<h4 className='filter-title'>
+																State
+															</h4>
 														</div>
 														<div>
 															<Select
 																placeholder='Select state'
-																onChange={onStateChange}
-																allowClear={true}
+																onChange={
+																	onStateChange
+																}
+																allowClear={
+																	true
+																}
 																className='input-box'
-																onSelect={onStateChange}
-																style={{ borderRadius: '20px', width: '100%' }}
-															>
-																{NIGERIA_STATES.map((state) => {
-																	return (
-																		<Option key={state} value={state}>
-																			{state}
-																		</Option>
-																	);
-																})}
+																onSelect={
+																	onStateChange
+																}
+																style={{
+																	borderRadius:
+																		"20px",
+																	width:
+																		"100%",
+																}}>
+																{NIGERIA_STATES.map(
+																	(state) => {
+																		return (
+																			<Option
+																				key={
+																					state
+																				}
+																				value={
+																					state
+																				}>
+																				{
+																					state
+																				}
+																			</Option>
+																		);
+																	}
+																)}
 															</Select>
 														</div>
 													</div>
 													<div className='input-container filter'>
 														<div>
-															<h4 className='filter-title'>LGA</h4>
+															<h4 className='filter-title'>
+																LGA
+															</h4>
 														</div>
 														<div>
 															<Select
 																placeholder='Select LGA'
-																onChange={onLGAChange}
-																allowClear={true}
+																onChange={
+																	onLGAChange
+																}
+																allowClear={
+																	true
+																}
 																className='input-box'
-																style={{ borderRadius: '20px', width: '100%' }}
-															>
-																{(selectedState !== '' ||
-																	selectedState !== undefined) &&
-																	NaijaStates.lgas(selectedState).lgas.map(
-																		(selectedStateLGAs) => {
+																style={{
+																	borderRadius:
+																		"20px",
+																	width:
+																		"100%",
+																}}>
+																{(selectedState !==
+																	"" ||
+																	selectedState !==
+																		undefined) &&
+																	NaijaStates.lgas(
+																		selectedState
+																	).lgas.map(
+																		(
+																			selectedStateLGAs
+																		) => {
 																			return (
 																				<Option
-																					key={selectedStateLGAs}
-																					value={selectedStateLGAs}
-																				>
-																					{selectedStateLGAs}
+																					key={
+																						selectedStateLGAs
+																					}
+																					value={
+																						selectedStateLGAs
+																					}>
+																					{
+																						selectedStateLGAs
+																					}
 																				</Option>
 																			);
 																		}
@@ -287,15 +371,24 @@ const Appartment = () => {
 
 													<div className='input-container filter'>
 														<div>
-															<h4 className='filter-title'>Price</h4>
+															<h4 className='filter-title'>
+																Price
+															</h4>
 														</div>
 														<div>
 															<Slider
 																range={true}
 																step={100}
-																defaultValue={[20, 50]}
-																onChange={onChange}
-																onAfterChange={onAfterChange}
+																defaultValue={[
+																	20,
+																	50,
+																]}
+																onChange={
+																	onChange
+																}
+																onAfterChange={
+																	onAfterChange
+																}
 																min={0}
 																max={100}
 															/>
@@ -303,32 +396,54 @@ const Appartment = () => {
 													</div>
 													<div className='input-container filter'>
 														<div>
-															<h4 className='filter-title'>Type</h4>
+															<h4 className='filter-title'>
+																Type
+															</h4>
 														</div>
 														<div>
 															<Select
 																placeholder='Select Type'
-																onChange={onHouseTypeChange}
-																onSelect={onHouseTypeChange}
-																allowClear={true}
+																onChange={
+																	onHouseTypeChange
+																}
+																onSelect={
+																	onHouseTypeChange
+																}
+																allowClear={
+																	true
+																}
 																className='input-box'
-																style={{ borderRadius: '20px', width: '100%' }}
-															>
-																<Option value='oneRoom'>One room</Option>
+																style={{
+																	borderRadius:
+																		"20px",
+																	width:
+																		"100%",
+																}}>
+																<Option value='oneRoom'>
+																	One room
+																</Option>
 																<Option value='oneRoomSelfcon'>
-																	One room selfcon
+																	One room
+																	selfcon
 																</Option>
 																<Option value='oneRoomAndParlour'>
-																	One room and parlour
+																	One room and
+																	parlour
 																</Option>
-																<Option value='miniFlat'>Mini flat</Option>
+																<Option value='miniFlat'>
+																	Mini flat
+																</Option>
 																<Option value='twoBedroomFlat'>
-																	Two bedroom flat
+																	Two bedroom
+																	flat
 																</Option>
 																<Option value='threeBedroomFlat'>
-																	Three bedroom flat
+																	Three
+																	bedroom flat
 																</Option>
-																<Option value='duplex'>Duplex</Option>
+																<Option value='duplex'>
+																	Duplex
+																</Option>
 															</Select>
 														</div>
 													</div>
@@ -336,8 +451,7 @@ const Appartment = () => {
 														<Button
 															className='primary-button'
 															shape='round'
-															size='middle'
-														>
+															size='middle'>
 															Filter
 														</Button>
 													</div>
@@ -354,16 +468,19 @@ const Appartment = () => {
 					</Affix>
 				</Col>
 				<Col xs={24} md={19} className='card-listing'>
-					<div className='appartment-listing-pane'>
+					<div className='appartment-listing-pane appartment-listing-wrapper'>
 						<Card
 							hoverable
-							style={{ width: 250 }}
+							className='apartment'
 							cover={
 								<div className='card-image-container'>
-									<img alt='example' src={house1} className='card-image' />
+									<img
+										alt='example'
+										src={house1}
+										className='card-image'
+									/>
 								</div>
-							}
-						>
+							}>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<span content='NGN' className='price NGN'>
@@ -395,13 +512,16 @@ const Appartment = () => {
 						</Card>
 						<Card
 							hoverable
-							style={{ width: 250 }}
+							className='apartment'
 							cover={
 								<div className='card-image-container'>
-									<img alt='example' src={house2} className='card-image' />
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
 								</div>
-							}
-						>
+							}>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<DollarOutlined />
@@ -431,13 +551,16 @@ const Appartment = () => {
 						</Card>
 						<Card
 							hoverable
-							style={{ width: 250 }}
+							className='apartment'
 							cover={
 								<div className='card-image-container'>
-									<img alt='example' src={house2} className='card-image' />
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
 								</div>
-							}
-						>
+							}>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<DollarOutlined />
@@ -467,13 +590,16 @@ const Appartment = () => {
 						</Card>
 						<Card
 							hoverable
-							style={{ width: 250 }}
+							className='apartment'
 							cover={
 								<div className='card-image-container'>
-									<img alt='example' src={house2} className='card-image' />
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
 								</div>
-							}
-						>
+							}>
 							<div className='card-descriptions'>
 								<div className='description-icon'>
 									<DollarOutlined />

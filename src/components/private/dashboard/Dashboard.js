@@ -40,7 +40,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 	const [drawerVisible, setDrawerVisible] = useState(false);
 	const [view, setView] = useState("all-appartment");
 	const loggedInUser = JSON.parse(localStorage.getItem("user"));
-	console.log("loggedin user", loggedInUser);
+
 	const showDrawer = () => {
 		setDrawerVisible(!drawerVisible);
 	};
@@ -263,10 +263,10 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 							: "center"
 					}`}>
 					{view === "all-appartment" || view === "my-appartments" ? (
-						<div className='appartment-listing-pane'>
+						<div className='appartment-listing-pane appartment-listing-wrapper'>
 							<Card
 								hoverable
-								style={{ width: 250 }}
+								className='apartment'
 								cover={
 									<div className='card-image-container'>
 										<img
@@ -332,7 +332,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 							</Card>
 							<Card
 								hoverable
-								style={{ width: 250 }}
+								className='apartment'
 								cover={
 									<div className='card-image-container'>
 										<img
@@ -394,7 +394,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 							</Card>
 							<Card
 								hoverable
-								style={{ width: 250 }}
+								className='apartment'
 								cover={
 									<div className='card-image-container'>
 										<img
@@ -456,7 +456,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 							</Card>
 							<Card
 								hoverable
-								style={{ width: 250 }}
+								className='apartment'
 								cover={
 									<div className='card-image-container'>
 										<img

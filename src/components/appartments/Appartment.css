@@ -1,72 +1,84 @@
 .filter-pane {
 	height: 100vh;
-	background-image: linear-gradient(
-		to right top,
-		#051937,
-		#004d7a,
-		#008793,
-		#00bf72,
-		#a8eb12
-	);
+	background-image: linear-gradient(to right top,
+			#051937,
+			#004d7a,
+			#008793,
+			#00bf72,
+			#a8eb12);
 	align-items: center;
 	color: #fff;
 	padding: 10px;
 	text-align: right;
 }
+
 .appartment-listing-pane {
 	padding: 20px;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	grid-gap: 20px;
 }
+
 .card-listing {
 	min-height: 100vh !important;
 	background-color: #eee;
 }
+
 .appartment-logo-container {
 	padding-top: 1rem;
 }
+
 .card-image-container {
-	width: 250px;
+	width: 100%;
 	height: 200px;
 }
+
 .ant-card-cover img {
 	width: 100%;
 	height: 100%;
 	border-radius: 10px 10px 0 0;
 }
+
 .ant-card {
 	border-radius: 10px;
 }
+
 .card-image {
 	width: 100%;
 	object-fit: cover;
 }
+
 .ant-card-body {
 	padding: 0.5rem;
 }
+
 .card-descriptions {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 }
+
 .description-icon {
 	padding-right: 5px;
 }
+
 .price {
 	font-weight: 700;
 }
+
 .NGN {
 	/* font-weight: 900; */
 	font-size: 16px;
 	padding-right: 4px;
 	font-weight: normal;
 }
+
 .drawer-header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
+
 .filter-drawer-header {
 	display: flex;
 	flex-direction: row;
@@ -84,12 +96,15 @@
 	padding: 0;
 	margin-bottom: 0px;
 }
+
 .mobile-menu {
 	display: none;
 }
+
 .footer-div {
 	display: none;
 }
+
 .footer-on-side-bar {
 	bottom: 0;
 	position: absolute;
@@ -102,79 +117,102 @@
 	background-color: #18c1a9;
 	padding-top: 10px;
 }
+
 .app-name {
 	padding: 10px;
 	background-color: #18c1a9;
 }
+
 .ment-filter-pane {
 	border: 0 !important;
 }
+
 .sign-up-card-rappers {
 	/* margin: 10px; */
 	padding: 10px;
 }
+
 .filter-pane-box {
 	border: none !important;
 }
+
+
+.appartment-listing-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-gap: 20px;
+}
+
+.apartment {
+	width: 100%;
+}
+
 @media screen and (max-width: 768px) {
 	.filter-pane {
 		height: auto;
 		display: none;
 	}
+
 	.appartment-listing-pane {
 		justify-items: center;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		padding: 24px;
 		grid-gap: 24px;
 	}
+
 	.ant-card {
 		width: 300px !important;
 	}
+
 	.ant-card-cover img {
 		width: 100%;
 	}
+
 	.card-image-container {
-		width: 300px;
+		width: 100%
 	}
+
 	.appartment-logo {
 		display: none;
 	}
+
 	.show-on-mobile {
 		display: block;
 	}
+
 	.mobile-menu {
-		background-image: linear-gradient(
-			to right top,
-			#051937,
-			#004d7a,
-			#008793,
-			#00bf72,
-			#a8eb12
-		);
+		background-image: linear-gradient(to right top,
+				#051937,
+				#004d7a,
+				#008793,
+				#00bf72,
+				#a8eb12);
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 10px;
 		border-radius: 0 0 10px 10px;
 	}
+
 	.easy-rent-text-mobile {
 		margin: 0px;
 	}
+
 	.drawer-container {
 		height: 100%;
-		background-image: linear-gradient(
-			to right top,
-			#051937,
-			#004d7a,
-			#008793,
-			#00bf72,
-			#a8eb12
-		);
+		background-image: linear-gradient(to right top,
+				#051937,
+				#004d7a,
+				#008793,
+				#00bf72,
+				#a8eb12);
 		width: 100%;
 	}
+
 	.ant-drawer-body {
 		padding: 0px;
 	}
+
 	.drawer-container {
 		text-align: right;
 	}
@@ -182,9 +220,11 @@
 	.filter-on-big-screen {
 		display: none;
 	}
+
 	.footer-div {
 		display: block;
 	}
+
 	.filter-pane-box {
 		border: none !important;
 	}
