@@ -476,6 +476,378 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<div className='description-icon'>
 										<EnvironmentOutlined />
 									</div>
+									<div>100 isawo road Yaba</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<HomeOutlined />
+									</div>
+									<div className=''>2 bedroom fat</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<PhoneOutlined />
+									</div>
+									<div className=''>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
+									</div>
+								</div>
+								<div className='actions'>
+									<div>
+										<Button
+											shape='round'
+											onClick={() =>
+												changeView("edit-appartment")
+											}
+											className='login-link'
+											type='link'>
+											Edit
+										</Button>
+									</div>
+									<div>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
+											Delete
+										</Button>
+									</div>
+								</div>
+							</Card>
+							<Card
+								hoverable
+								className='apartment'
+								cover={
+									<div className='card-image-container'>
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
+									</div>
+								}>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<DollarOutlined />
+									</div>
+									<div className='price'>250,000</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<EnvironmentOutlined />
+									</div>
+									<div>100 isawo road Yaba</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<HomeOutlined />
+									</div>
+									<div className=''>2 bedroom fat</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<PhoneOutlined />
+									</div>
+									<div className=''>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
+									</div>
+								</div>
+								<div className='actions'>
+									<div>
+										<Button
+											shape='round'
+											onClick={() =>
+												changeView("edit-appartment")
+											}
+											className='login-link'
+											type='link'>
+											Edit
+										</Button>
+									</div>
+									<div>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
+											Delete
+										</Button>
+									</div>
+								</div>
+							</Card>
+							<Card
+								hoverable
+								className='apartment'
+								cover={
+									<div className='card-image-container'>
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
+									</div>
+								}>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<DollarOutlined />
+									</div>
+									<div className='price'>250,000</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<EnvironmentOutlined />
+									</div>
+									<div>100 isawo road Yaba</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<HomeOutlined />
+									</div>
+									<div className=''>2 bedroom fat</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<PhoneOutlined />
+									</div>
+									<div className=''>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
+									</div>
+								</div>
+								<div className='actions'>
+									<div>
+										<Button
+											shape='round'
+											onClick={() =>
+												changeView("edit-appartment")
+											}
+											className='login-link'
+											type='link'>
+											Edit
+										</Button>
+									</div>
+									<div>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
+											Delete
+										</Button>
+									</div>
+								</div>
+							</Card>
+							<Card
+								hoverable
+								className='apartment'
+								cover={
+									<div className='card-image-container'>
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
+									</div>
+								}>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<DollarOutlined />
+									</div>
+									<div className='price'>250,000</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<EnvironmentOutlined />
+									</div>
+									<div>100 isawo road Yaba</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<HomeOutlined />
+									</div>
+									<div className=''>2 bedroom fat</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<PhoneOutlined />
+									</div>
+									<div className=''>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
+									</div>
+								</div>
+								<div className='actions'>
+									<div>
+										<Button
+											shape='round'
+											onClick={() =>
+												changeView("edit-appartment")
+											}
+											className='login-link'
+											type='link'>
+											Edit
+										</Button>
+									</div>
+									<div>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
+											Delete
+										</Button>
+									</div>
+								</div>
+							</Card>
+							<Card
+								hoverable
+								className='apartment'
+								cover={
+									<div className='card-image-container'>
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
+									</div>
+								}>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<DollarOutlined />
+									</div>
+									<div className='price'>250,000</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<EnvironmentOutlined />
+									</div>
+									<div>100 isawo road Yaba</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<HomeOutlined />
+									</div>
+									<div className=''>2 bedroom fat</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<PhoneOutlined />
+									</div>
+									<div className=''>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
+									</div>
+								</div>
+								<div className='actions'>
+									<div>
+										<Button
+											shape='round'
+											onClick={() =>
+												changeView("edit-appartment")
+											}
+											className='login-link'
+											type='link'>
+											Edit
+										</Button>
+									</div>
+									<div>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
+											Delete
+										</Button>
+									</div>
+								</div>
+							</Card>
+							<Card
+								hoverable
+								className='apartment'
+								cover={
+									<div className='card-image-container'>
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
+									</div>
+								}>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<DollarOutlined />
+									</div>
+									<div className='price'>250,000</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<EnvironmentOutlined />
+									</div>
+									<div>100 isawo road Yaba</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<HomeOutlined />
+									</div>
+									<div className=''>2 bedroom fat</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<PhoneOutlined />
+									</div>
+									<div className=''>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
+									</div>
+								</div>
+								<div className='actions'>
+									<div>
+										<Button
+											shape='round'
+											onClick={() =>
+												changeView("edit-appartment")
+											}
+											className='login-link'
+											type='link'>
+											Edit
+										</Button>
+									</div>
+									<div>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
+											Delete
+										</Button>
+									</div>
+								</div>
+							</Card>
+							<Card
+								hoverable
+								className='apartment'
+								cover={
+									<div className='card-image-container'>
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
+									</div>
+								}>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<DollarOutlined />
+									</div>
+									<div className='price'>250,000</div>
+								</div>
+								<div className='card-descriptions'>
+									<div className='description-icon'>
+										<EnvironmentOutlined />
+									</div>
 									<div>4 fadeyi street orile</div>
 								</div>
 								<div className='card-descriptions'>
