@@ -157,12 +157,12 @@
 		justify-items: center;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		padding: 24px;
-		grid-gap: 24px;
+		grid-gap: 20px;
 	}
 
-	.ant-card {
+	/* .ant-card {
 		width: 300px !important;
-	}
+	} */
 
 	.ant-card-cover img {
 		width: 100%;

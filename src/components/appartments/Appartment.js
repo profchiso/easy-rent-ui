@@ -627,6 +627,396 @@ const Appartment = () => {
 								</div>
 							</div>
 						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
+						<Card
+							hoverable
+							className='apartment'
+							cover={
+								<div className='card-image-container'>
+									<img
+										alt='example'
+										src={house2}
+										className='card-image'
+									/>
+								</div>
+							}>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<DollarOutlined />
+								</div>
+								<div className='price'>200,000</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<EnvironmentOutlined />
+								</div>
+								<div>35 Deji street ketu</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<HomeOutlined />
+								</div>
+								<div className=''>2 bedroom fat</div>
+							</div>
+							<div className='card-descriptions'>
+								<div className='description-icon'>
+									<PhoneOutlined />
+								</div>
+								<div className=''>
+									<a href='tel:08036009397'>08036009397</a>
+								</div>
+							</div>
+						</Card>
 					</div>
 				</Col>
 			</Row>
