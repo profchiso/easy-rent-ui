@@ -41,12 +41,9 @@ const Register = ({
 	const { error } = registerReducer;
 	console.log("register reducer", registerReducer);
 	const [status, setStatus] = useState(false);
-	//const [isOauthSuccessfu, setIsOauthSuccessful] = useState(false);
 
-	const activateLoading = () => {
-		setStatus(true);
-	};
 	const onFinish = async (values) => {
+		setStatus(true);
 		await register(values);
 		if (error) setStatus(false);
 	};
@@ -102,6 +99,7 @@ const Register = ({
 						<Form
 							name='regform'
 							onFinish={onFinish}
+							scrollToFirstError={true}
 							onFinishFailed={onFinishFailed}>
 							<div className='input-container'>
 								<Form.Item
@@ -113,6 +111,7 @@ const Register = ({
 										prefix={<UserOutlined />}
 										allowClear={true}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
@@ -127,6 +126,7 @@ const Register = ({
 										prefix={<MailOutlined />}
 										allowClear={true}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
@@ -140,6 +140,7 @@ const Register = ({
 										prefix={<PhoneOutlined />}
 										allowClear={true}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
@@ -153,6 +154,7 @@ const Register = ({
 										allowClear={true}
 										prefix={<LockOutlined />}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
@@ -166,6 +168,7 @@ const Register = ({
 										allowClear={true}
 										prefix={<LockOutlined />}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
@@ -176,7 +179,6 @@ const Register = ({
 										className='primary-button'
 										shape='round'
 										size='middle'
-										onClick={activateLoading}
 										loading={status}>
 										Submit
 									</Button>

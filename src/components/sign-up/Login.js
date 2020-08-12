@@ -61,6 +61,7 @@ const Login = ({ changeView, registerReducer, login, clearErrorMessage }) => {
 										prefix={<MailOutlined />}
 										allowClear={true}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
@@ -74,6 +75,7 @@ const Login = ({ changeView, registerReducer, login, clearErrorMessage }) => {
 										allowClear={true}
 										prefix={<LockOutlined />}
 										onChange={onChange}
+										autoComplete={false}
 									/>
 								</Form.Item>
 							</div>
