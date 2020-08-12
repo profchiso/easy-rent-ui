@@ -5,23 +5,32 @@
 	color: #a8eb12;
 	font-size: 10px;
 }
+
 .copyright {
 	text-align: right;
 	margin: 0.5rem auto;
 	font-size: 13px;
 	color: #333;
 }
+
 .footer-link {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 1rem;
+	color: #333 !important;
 }
+
+.footer-anchor {
+	color: #333 !important;
+}
+
 .footer-link:hover {
 	color: #333 !important;
 	border-radius: 10px 0 0 10px;
 	background-color: #a8eb12;
 	border-right: 3px solid #333;
 }
+
 @media screen and (max-width: 768px) {
 	.footer-link {
 		padding-right: 0;

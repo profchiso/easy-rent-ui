@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 //npm packages
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //components
 
 //styles
-import './Footer.css';
+import "./Footer.css";
 
 //constants
 
@@ -15,13 +15,19 @@ const Footer = () => {
 		<div className='footer-container'>
 			<div className='footer-links'>
 				<div className='footer-link'>
-					<Link to='/privacy'>Privacy</Link>
+					<Link to='/privacy' className='footer-anchor'>
+						Privacy
+					</Link>
 				</div>
 				<div className='footer-link'>
-					<Link to='/support'>Support</Link>
+					<Link to='/support' className='footer-anchor'>
+						Support
+					</Link>
 				</div>
 				<div className='footer-link'>
-					<Link to='/pricing'>Pricing</Link>
+					<Link className='footer-anchor' to='/pricing'>
+						Pricing
+					</Link>
 				</div>
 			</div>
 			<div className='copyright'>
