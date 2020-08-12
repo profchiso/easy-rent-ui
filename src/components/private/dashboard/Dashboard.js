@@ -39,7 +39,7 @@ const { SubMenu } = Menu;
 const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 	const [drawerVisible, setDrawerVisible] = useState(false);
 	const [view, setView] = useState("all-appartment");
-	const loggedInUser = JSON.parse(localStorage.getItem("user"));
+	//const loggedInUser = JSON.parse(localStorage.getItem("user"));
 
 	const showDrawer = () => {
 		setDrawerVisible(!drawerVisible);
