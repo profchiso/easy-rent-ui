@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 //packages
 // import FacebookLogin from 'react-facebook-login';
 // import GoogleLogin from 'react-google-login';
 // import TwitterLogin from 'react-twitter-login';
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 //components
-import { Input, Button, Row, Col, Form } from 'antd';
+import { Input, Button, Row, Col, Form } from "antd";
 import {
 	UserOutlined,
 	MailOutlined,
 	PhoneOutlined,
 	LockOutlined,
-} from '@ant-design/icons';
-import { register, clearErrorMessage } from '../../actions/userAccountAction';
+} from "@ant-design/icons";
+import { register, clearErrorMessage } from "../../actions/userAccountAction";
 import {
 	facebookAuth,
 	twitterAuth,
 	googleAuth,
-} from '../../actions/oauthActions';
+} from "../../actions/oauthActions";
 
 // import facebook from '../../img/facebook.png';
 // import twitter from '../../img/twitter.png';
@@ -38,18 +38,17 @@ const Register = ({
 	twitterAuth,
 	googleAuth,
 }) => {
-	const { isSuccessful, error } = registerReducer;
+	const { error } = registerReducer;
+	console.log("register reducer", registerReducer);
 	const [status, setStatus] = useState(false);
 	//const [isOauthSuccessfu, setIsOauthSuccessful] = useState(false);
 
 	const activateLoading = () => {
 		setStatus(true);
 	};
-	const onFinish = (values) => {
-		register(values);
-		if (isSuccessful) {
-			setStatus(false);
-		}
+	const onFinish = async (values) => {
+		await register(values);
+		if (error) setStatus(false);
 	};
 	const onFinishFailed = (errorInfo) => {
 		setStatus(false);
@@ -96,18 +95,18 @@ const Register = ({
 						</div>
 						<div
 							className={`${
-								error.errMessage ? '' : 'hide-element'
-							} err-message`}
-						>
+								error.errMessage ? "" : "hide-element"
+							} err-message`}>
 							{error.errMessage}
 						</div>
 						<Form
 							name='regform'
 							onFinish={onFinish}
-							onFinishFailed={onFinishFailed}
-						>
+							onFinishFailed={onFinishFailed}>
 							<div className='input-container'>
-								<Form.Item rules={[{ required: true }]} name='name'>
+								<Form.Item
+									rules={[{ required: true }]}
+									name='name'>
 									<Input
 										placeholder='Fullname'
 										className='input-box'
@@ -119,9 +118,8 @@ const Register = ({
 							</div>
 							<div className='input-container'>
 								<Form.Item
-									rules={[{ required: true, type: 'email' }]}
-									name='email'
-								>
+									rules={[{ required: true, type: "email" }]}
+									name='email'>
 									<Input
 										placeholder='Email'
 										className='input-box'
@@ -133,7 +131,9 @@ const Register = ({
 								</Form.Item>
 							</div>
 							<div className='input-container'>
-								<Form.Item rules={[{ required: true }]} name='phone'>
+								<Form.Item
+									rules={[{ required: true }]}
+									name='phone'>
 									<Input
 										placeholder='Phone'
 										className='input-box'
@@ -144,7 +144,9 @@ const Register = ({
 								</Form.Item>
 							</div>
 							<div className='input-container'>
-								<Form.Item rules={[{ required: true }]} name='password'>
+								<Form.Item
+									rules={[{ required: true }]}
+									name='password'>
 									<Input.Password
 										placeholder='Password'
 										className='input-box'
@@ -155,7 +157,9 @@ const Register = ({
 								</Form.Item>
 							</div>
 							<div className='input-container'>
-								<Form.Item rules={[{ required: true }]} name='confirmPassword'>
+								<Form.Item
+									rules={[{ required: true }]}
+									name='confirmPassword'>
 									<Input.Password
 										placeholder='Confirm Password'
 										className='input-box'
@@ -173,8 +177,7 @@ const Register = ({
 										shape='round'
 										size='middle'
 										onClick={activateLoading}
-										loading={status}
-									>
+										loading={status}>
 										Submit
 									</Button>
 								</Form.Item>

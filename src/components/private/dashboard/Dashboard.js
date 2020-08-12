@@ -1,11 +1,11 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment } from "react";
 
 //packages
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 //components
-import { Row, Col, Affix, Card, Drawer, Avatar, Menu, Button } from 'antd';
+import { Row, Col, Affix, Card, Drawer, Avatar, Menu, Button } from "antd";
 import {
 	EnvironmentOutlined,
 	DollarOutlined,
@@ -18,27 +18,27 @@ import {
 	EditOutlined,
 	LoginOutlined,
 	BarChartOutlined,
-} from '@ant-design/icons';
-import Footer from '../../common/Footer/Footer';
-import house1 from '../../../img/house1.jpg';
-import house2 from '../../../img/house2.jpeg';
-import user from '../../../img/chinedu.jpeg';
-import AddNewAppartment from './AddNewAppartment';
-import UpdateProfile from './UpdateProfile';
-import ChangePassword from './ChangePassword';
-import EditAppartment from './EditAppartment';
-import { logout } from '../../../actions/userAccountAction';
-import { updatePassword } from '../../../actions/dashboardActions';
+} from "@ant-design/icons";
+import Footer from "../../common/Footer/Footer";
+import house1 from "../../../img/house1.jpg";
+import house2 from "../../../img/house2.jpeg";
+import user from "../../../img/chinedu.jpeg";
+import AddNewAppartment from "./AddNewAppartment";
+import UpdateProfile from "./UpdateProfile";
+import ChangePassword from "./ChangePassword";
+import EditAppartment from "./EditAppartment";
+import { logout } from "../../../actions/userAccountAction";
+import { updatePassword } from "../../../actions/dashboardActions";
 
 //styles
-import './Dashboard.css';
+import "./Dashboard.css";
 
 //constants
 const { SubMenu } = Menu;
 
 const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 	const [drawerVisible, setDrawerVisible] = useState(false);
-	const [view, setView] = useState('all-appartment');
+	const [view, setView] = useState("all-appartment");
 	const showDrawer = () => {
 		setDrawerVisible(!drawerVisible);
 	};
@@ -46,8 +46,8 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 		setDrawerVisible(false);
 	};
 	const handleClick = (e) => {
-		console.log('click ', e.key);
-		if (e.key === 'logout') {
+		console.log("click ", e.key);
+		if (e.key === "logout") {
 			logout();
 		}
 	};
@@ -67,7 +67,9 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<Link to='/'>
 										<h1 className='easy-rent-text  easy-rent-text-mobile'>
 											easy
-											<span className='rent-color'>RENT</span>
+											<span className='rent-color'>
+												RENT
+											</span>
 										</h1>
 									</Link>
 									<h1 className='easy-rent-text  easy-rent-text-mobile'>
@@ -78,8 +80,7 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 									<Menu
 										onClick={handleClick}
 										mode='inline'
-										className='mobile-ant-menu'
-									>
+										className='mobile-ant-menu'>
 										<SubMenu
 											key='sub1'
 											title={
@@ -87,18 +88,19 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 													<HomeOutlined />
 													<span>Appartment</span>
 												</span>
-											}
-										>
+											}>
 											<Menu.Item
 												key='add-new'
-												onClick={() => changeView('add-new')}
-											>
+												onClick={() =>
+													changeView("add-new")
+												}>
 												<PlusOutlined /> Add new
 											</Menu.Item>
 											<Menu.Item
 												key='my-appartments'
-												onClick={() => changeView('my-appartments')}
-											>
+												onClick={() =>
+													changeView("my-appartments")
+												}>
 												<BarChartOutlined />
 												My appartments
 											</Menu.Item>
@@ -106,19 +108,20 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 										<SubMenu
 											key='sub2'
 											icon={<SettingOutlined />}
-											title='Accout setting'
-										>
+											title='Accout setting'>
 											<Menu.Item
 												key='password'
-												onClick={() => changeView('password')}
-											>
+												onClick={() =>
+													changeView("password")
+												}>
 												<EditOutlined />
 												Password
 											</Menu.Item>
 											<Menu.Item
 												key='profile'
-												onClick={() => changeView('profile')}
-											>
+												onClick={() =>
+													changeView("profile")
+												}>
 												<EditOutlined />
 												Profile
 											</Menu.Item>
@@ -155,14 +158,15 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 										closable={false}
 										onClose={closeDrawer}
 										visible={drawerVisible}
-										width='90%'
-									>
+										width='90%'>
 										<div className='drawer-container'>
 											<div className='drawer-header dashboard-drawer-header'>
 												<Link to='/'>
 													<h1 className='easy-rent-text  easy-rent-text-mobile'>
 														easy
-														<span className='rent-color'>RENT</span>
+														<span className='rent-color'>
+															RENT
+														</span>
 													</h1>
 												</Link>
 												<h1 className='easy-rent-text  easy-rent-text-mobile'>
@@ -173,47 +177,61 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 												<Menu
 													onClick={handleClick}
 													mode='inline'
-													className='mobile-ant-menu'
-												>
+													className='mobile-ant-menu'>
 													<SubMenu
 														key='sub1'
 														title={
 															<span>
 																<HomeOutlined />
-																<span>Appartment</span>
+																<span>
+																	Appartment
+																</span>
 															</span>
-														}
-													>
+														}>
 														<Menu.Item
 															key='add-new'
-															onClick={() => changeView('add-new')}
-														>
-															<PlusOutlined /> Add new
+															onClick={() =>
+																changeView(
+																	"add-new"
+																)
+															}>
+															<PlusOutlined /> Add
+															new
 														</Menu.Item>
 														<Menu.Item
 															key='my-appartments'
-															onClick={() => changeView('my-appartments')}
-														>
+															onClick={() =>
+																changeView(
+																	"my-appartments"
+																)
+															}>
 															<BarChartOutlined />
 															My appartments
 														</Menu.Item>
 													</SubMenu>
 													<SubMenu
 														key='sub2'
-														icon={<SettingOutlined />}
-														title='Accout setting'
-													>
+														icon={
+															<SettingOutlined />
+														}
+														title='Accout setting'>
 														<Menu.Item
 															key='password'
-															onClick={() => changeView('password')}
-														>
+															onClick={() =>
+																changeView(
+																	"password"
+																)
+															}>
 															<EditOutlined />
 															Password
 														</Menu.Item>
 														<Menu.Item
 															key='profile'
-															onClick={() => changeView('profile')}
-														>
+															onClick={() =>
+																changeView(
+																	"profile"
+																)
+															}>
 															<EditOutlined />
 															Profile
 														</Menu.Item>
@@ -238,25 +256,29 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 					xs={24}
 					md={19}
 					className={`card-listing ${
-						view === 'all-appartment' || view === 'my-appartments'
-							? ''
-							: 'center'
-					}`}
-				>
-					{view === 'all-appartment' || view === 'my-appartments' ? (
+						view === "all-appartment" || view === "my-appartments"
+							? ""
+							: "center"
+					}`}>
+					{view === "all-appartment" || view === "my-appartments" ? (
 						<div className='appartment-listing-pane'>
 							<Card
 								hoverable
 								style={{ width: 250 }}
 								cover={
 									<div className='card-image-container'>
-										<img alt='example' src={house1} className='card-image' />
+										<img
+											alt='example'
+											src={house1}
+											className='card-image'
+										/>
 									</div>
-								}
-							>
+								}>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
-										<span content='NGN' className='price NGN'>
+										<span
+											content='NGN'
+											className='price NGN'>
 											₦
 										</span>
 									</div>
@@ -279,22 +301,28 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 										<PhoneOutlined />
 									</div>
 									<div className=''>
-										<a href='tel:08036009397'>08036009397</a>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
 									</div>
 								</div>
 								<div className='actions'>
 									<div>
 										<Button
 											shape='round'
-											onClick={() => changeView('edit-appartment')}
+											onClick={() =>
+												changeView("edit-appartment")
+											}
 											className='login-link'
-											type='link'
-										>
+											type='link'>
 											Edit
 										</Button>
 									</div>
 									<div>
-										<Button shape='round' className='login-link' type='link'>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
 											Delete
 										</Button>
 									</div>
@@ -305,10 +333,13 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 								style={{ width: 250 }}
 								cover={
 									<div className='card-image-container'>
-										<img alt='example' src={house2} className='card-image' />
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
 									</div>
-								}
-							>
+								}>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
 										<DollarOutlined />
@@ -332,22 +363,28 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 										<PhoneOutlined />
 									</div>
 									<div className=''>
-										<a href='tel:08036009397'>08036009397</a>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
 									</div>
 								</div>
 								<div className='actions'>
 									<div>
 										<Button
 											shape='round'
-											onClick={() => changeView('edit-appartment')}
+											onClick={() =>
+												changeView("edit-appartment")
+											}
 											className='login-link'
-											type='link'
-										>
+											type='link'>
 											Edit
 										</Button>
 									</div>
 									<div>
-										<Button shape='round' className='login-link' type='link'>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
 											Delete
 										</Button>
 									</div>
@@ -358,10 +395,13 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 								style={{ width: 250 }}
 								cover={
 									<div className='card-image-container'>
-										<img alt='example' src={house2} className='card-image' />
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
 									</div>
-								}
-							>
+								}>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
 										<DollarOutlined />
@@ -385,22 +425,28 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 										<PhoneOutlined />
 									</div>
 									<div className=''>
-										<a href='tel:08036009397'>08036009397</a>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
 									</div>
 								</div>
 								<div className='actions'>
 									<div>
 										<Button
 											shape='round'
-											onClick={() => changeView('edit-appartment')}
+											onClick={() =>
+												changeView("edit-appartment")
+											}
 											className='login-link'
-											type='link'
-										>
+											type='link'>
 											Edit
 										</Button>
 									</div>
 									<div>
-										<Button shape='round' className='login-link' type='link'>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
 											Delete
 										</Button>
 									</div>
@@ -411,10 +457,13 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 								style={{ width: 250 }}
 								cover={
 									<div className='card-image-container'>
-										<img alt='example' src={house2} className='card-image' />
+										<img
+											alt='example'
+											src={house2}
+											className='card-image'
+										/>
 									</div>
-								}
-							>
+								}>
 								<div className='card-descriptions'>
 									<div className='description-icon'>
 										<DollarOutlined />
@@ -438,41 +487,47 @@ const Dashboard = ({ registerReducer, logout, updatePassword }) => {
 										<PhoneOutlined />
 									</div>
 									<div className=''>
-										<a href='tel:08036009397'>08036009397</a>
+										<a href='tel:08036009397'>
+											08036009397
+										</a>
 									</div>
 								</div>
 								<div className='actions'>
 									<div>
 										<Button
 											shape='round'
-											onClick={() => changeView('edit-appartment')}
+											onClick={() =>
+												changeView("edit-appartment")
+											}
 											className='login-link'
-											type='link'
-										>
+											type='link'>
 											Edit
 										</Button>
 									</div>
 									<div>
-										<Button shape='round' className='login-link' type='link'>
+										<Button
+											shape='round'
+											className='login-link'
+											type='link'>
 											Delete
 										</Button>
 									</div>
 								</div>
 							</Card>
 						</div>
-					) : view === 'add-new' ? (
+					) : view === "add-new" ? (
 						<Fragment>
 							<AddNewAppartment />
 						</Fragment>
-					) : view === 'password' ? (
+					) : view === "password" ? (
 						<Fragment>
 							<ChangePassword />
 						</Fragment>
-					) : view === 'profile' ? (
+					) : view === "profile" ? (
 						<Fragment>
 							<UpdateProfile />
 						</Fragment>
-					) : view === 'edit-appartment' ? (
+					) : view === "edit-appartment" ? (
 						<Fragment>
 							<EditAppartment />
 						</Fragment>

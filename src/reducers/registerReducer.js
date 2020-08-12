@@ -1,22 +1,23 @@
 const initialState = {
-	token: '',
+	token: "",
 	user: {},
 	isSuccessful: false,
 	error: {},
+	isCallFinished: false,
 	passwordResetResponse: {},
 };
 
 export const registerReducer = (state = initialState, actions) => {
 	const { type, payload } = actions;
-	console.log(type);
-	console.log(payload);
+	console.log("action type", type);
+	console.log("action payload", payload);
 
 	if (
-		type === 'SAVE_REGISTERED_USER_DATA' ||
-		type === 'SAVE_LOGGED_IN_USER_DATA'
+		type === "SAVE_REGISTERED_USER_DATA" ||
+		type === "SAVE_LOGGED_IN_USER_DATA"
 	) {
-		localStorage.setItem('token', JSON.stringify(payload.token));
-		localStorage.setItem('user', JSON.stringify(payload.user));
+		localStorage.setItem("token", JSON.stringify(payload.token));
+		localStorage.setItem("user", JSON.stringify(payload.user));
 		return {
 			...state,
 			token: payload.token,
@@ -24,29 +25,29 @@ export const registerReducer = (state = initialState, actions) => {
 			isSuccessful: true,
 			error: {},
 		};
-	} else if (type === 'REGISTRATION_ERROR' || type === 'LOGIN_ERROR') {
-		localStorage.removeItem('token');
-		localStorage.removeItem('user');
+	} else if (type === "REGISTRATION_ERROR" || type === "LOGIN_ERROR") {
+		localStorage.removeItem("token");
+		localStorage.removeItem("user");
 		return {
 			...state,
 			error: payload,
-			isSuccessful: true,
+			isSuccessful: false,
 		};
-	} else if (type === 'LOGOUT') {
-		localStorage.removeItem('token');
-		localStorage.removeItem('user');
+	} else if (type === "LOGOUT") {
+		localStorage.removeItem("token");
+		localStorage.removeItem("user");
 		return {
 			...state,
 			user: {},
 			isSuccessful: false,
-			token: '',
+			token: "",
 		};
-	} else if (type === 'SET_PASSWORD_RESET_RESPONSE') {
+	} else if (type === "SET_PASSWORD_RESET_RESPONSE") {
 		return {
 			...state,
 			passwordResetResponse: payload,
 		};
-	} else if (type === 'CLEAR_ERROR_MESSAGE') {
+	} else if (type === "CLEAR_ERROR_MESSAGE") {
 		return {
 			...state,
 			error: {},

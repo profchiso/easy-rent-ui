@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 const oauthURL =
-	'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/oauth/authorize';
+	"https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/oauth/authorize";
 export const facebookAuth = (userData) => {
 	console.log(userData);
 	return async (dispatch) => {
@@ -20,14 +20,14 @@ export const facebookAuth = (userData) => {
 };
 export const saveFacebookAuthDataToState = (registeredUserData) => {
 	return {
-		type: 'SAVE_FACEBOOK_USER_DATA',
+		type: "SAVE_FACEBOOK_USER_DATA",
 		payload: registeredUserData,
 	};
 };
 
 export const facebookAuthError = (err) => {
 	return {
-		type: 'FACEBOOK_ERROR',
+		type: "FACEBOOK_ERROR",
 		payload: err,
 	};
 };
@@ -50,14 +50,14 @@ export const twitterAuth = (userData) => {
 };
 export const saveTwitterAuthDataToState = (registeredUserData) => {
 	return {
-		type: 'SAVE_TWITTER_USER_DATA',
+		type: "SAVE_TWITTER_USER_DATA",
 		payload: registeredUserData,
 	};
 };
 
 export const twitterAuthError = (err) => {
 	return {
-		type: 'TWITTER_ERROR',
+		type: "TWITTER_ERROR",
 		payload: err,
 	};
 };
@@ -80,14 +80,14 @@ export const googleAuth = (userData) => {
 };
 export const saveGoogleAuthDataToState = (registeredUserData) => {
 	return {
-		type: 'SAVE_GOOGLE_USER_DATA',
+		type: "SAVE_GOOGLE_USER_DATA",
 		payload: registeredUserData,
 	};
 };
 
 export const googleAuthError = (err) => {
 	return {
-		type: 'GOOGLE_ERROR',
+		type: "GOOGLE_ERROR",
 		payload: err,
 	};
 };

@@ -1,14 +1,14 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment } from "react";
 
 //packages
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //components
-import { Typography, Button, Steps, Row, Col } from 'antd';
-import logo from '../../img/rental.png';
+import { Typography, Button, Steps, Row, Col } from "antd";
+import logo from "../../img/rental.png";
 
 //styles
-import './Landing.css';
+import "./Landing.css";
 
 //constants
 const { Text, Title } = Typography;
@@ -41,7 +41,8 @@ const Landing = () => {
 						<div className='content-section'>
 							<Title level={3}>Your rent made easy!!!</Title>
 							<Text strong className='heading'>
-								Get you appartment with these three simple steps.
+								Get you appartment with these three simple
+								steps.
 							</Text>
 							<div className='content-section steps'>
 								<Steps>
@@ -68,8 +69,7 @@ const Landing = () => {
 								className='primary-button'
 								shape='round'
 								size='large'
-								onClick={changeView}
-							>
+								onClick={changeView}>
 								Get started
 							</Button>
 						</div>
@@ -85,8 +85,7 @@ const Landing = () => {
 												className='primary-button'
 												shape='round'
 												size='large'
-												onClick={changeView}
-											>
+												onClick={changeView}>
 												I want to rent house.
 											</Button>
 										</Link>
@@ -99,8 +98,7 @@ const Landing = () => {
 												className='primary-button'
 												shape='round'
 												size='large'
-												onClick={changeView}
-											>
+												onClick={changeView}>
 												I have house to let.
 											</Button>
 										</Link>

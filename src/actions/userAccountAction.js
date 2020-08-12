@@ -1,26 +1,31 @@
-import axios from 'axios';
+import axios from "axios";
+const BASE_URL = "https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users";
+const CONFIG = {
+	headers: {
+		"content-type": "application/json",
+	},
+};
 export const register = (userData) => {
 	return async (dispatch) => {
 		try {
 			const registeredUser = await axios.post(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/signup',
-				userData
+				`${BASE_URL}/signup`,
+				userData,
+				CONFIG
 			);
 
-			if (registeredUser.data.statusCode === 201) {
+			if (registeredUser.status === 201)
 				dispatch(saveRegisteredUserDataToState(registeredUser.data));
-			} else {
-				dispatch(registrationError(registeredUser.data));
-			}
 		} catch (error) {
-			console.log(error);
-			dispatch(registrationError(error));
+			console.log("Registration error", error);
+			dispatch(registrationError(error.response.data));
 		}
 	};
 };
 export const saveRegisteredUserDataToState = (registeredUserData) => {
+	console.log(registeredUserData);
 	return {
-		type: 'SAVE_REGISTERED_USER_DATA',
+		type: "SAVE_REGISTERED_USER_DATA",
 		payload: registeredUserData,
 	};
 };
@@ -29,81 +34,72 @@ export const login = (userData) => {
 	return async (dispatch) => {
 		try {
 			const loggedInUser = await axios.post(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/login',
-				userData
+				`${BASE_URL}/login`,
+				userData,
+				CONFIG
 			);
-			if (loggedInUser.data.statusCode === 200) {
+
+			loggedInUser.status === 200 &&
 				dispatch(saveLoginUserDataToState(loggedInUser.data));
-			} else {
-				dispatch(loginError(loggedInUser.data));
-			}
 		} catch (error) {
-			console.log(error);
-			dispatch(loginError(error));
+			console.log("login error", error);
+			dispatch(loginError(error.response.data));
 		}
 	};
 };
 
 export const saveLoginUserDataToState = (loggedInUserData) => {
 	return {
-		type: 'SAVE_LOGGED_IN_USER_DATA',
+		type: "SAVE_LOGGED_IN_USER_DATA",
 		payload: loggedInUserData,
 	};
 };
 
 export const registrationError = (err) => {
 	return {
-		type: 'REGISTRATION_ERROR',
+		type: "REGISTRATION_ERROR",
 		payload: err,
 	};
 };
 
 export const loginError = (err) => {
 	return {
-		type: 'LOGIN_ERROR',
+		type: "LOGIN_ERROR",
 		payload: err,
 	};
 };
 
 export const logout = () => {
 	return {
-		type: 'LOGOUT',
+		type: "LOGOUT",
 	};
 };
 export const forgotPassword = (userData) => {
 	return async (dispatch) => {
 		try {
 			const user = await axios.post(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/forgot-password',
+				`${BASE_URL}/forgot-password`,
 				userData,
-				{
-					headers: {
-						'content-type': 'application/json',
-					},
-				}
+				CONFIG
 			);
-			console.log(user);
 
-			if (user.data.statusCode === 200) {
+			if (user.status === 200)
 				dispatch(savePasswordResetResponseToState(user.data));
-			} else {
-				dispatch(savePasswordResetResponseToState(user.data));
-			}
 		} catch (error) {
 			console.log(error);
-			dispatch(savePasswordResetResponseToState(error));
+			dispatch(savePasswordResetResponseToState(error.response.data));
 		}
 	};
 };
 export const savePasswordResetResponseToState = (res) => {
 	return {
-		type: 'SET_PASSWORD_RESET_RESPONSE',
+		type: "SET_PASSWORD_RESET_RESPONSE",
 		payload: res,
 	};
 };
 export const clearErrorMessage = () => {
 	return {
-		type: 'CLEAR_ERROR_MESSAGE',
+		type: "CLEAR_ERROR_MESSAGE",
 	};
 };
 
@@ -111,24 +107,16 @@ export const updatePassword = (userData) => {
 	return async (dispatch) => {
 		try {
 			const user = await axios.patch(
-				'https://easy-rent-api.herokuapp.com/easy-rent/api/v1/users/update-password',
+				`${BASE_URL}/update-password`,
 				userData,
-				{
-					headers: {
-						'content-type': 'application/json',
-					},
-				}
+				CONFIG
 			);
-			console.log(user);
 
-			if (user.data.statusCode === 200) {
+			if (user.status === 200)
 				dispatch(savePasswordResetResponseToState(user.data));
-			} else {
-				dispatch(savePasswordResetResponseToState(user.data));
-			}
 		} catch (error) {
 			console.log(error);
-			dispatch(savePasswordResetResponseToState(error));
+			dispatch(savePasswordResetResponseToState(error.response.data));
 		}
 	};
 };
