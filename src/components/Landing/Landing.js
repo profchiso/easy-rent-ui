@@ -41,7 +41,7 @@ const Landing = () => {
 						<div className='content-section'>
 							<Title level={3}>Your rent made easy!!!</Title>
 							<Text strong className='heading'>
-								Get you appartment with these three simple
+								Get your apartment with these three simple
 								steps.
 							</Text>
 							<div className='content-section steps'>
@@ -49,17 +49,17 @@ const Landing = () => {
 									<Step
 										status='process'
 										title='Search'
-										description='Search for appartment in your desired location.'
+										description='Search for apartment in your desired location.'
 									/>
 									<Step
 										status='process'
 										title='Pay'
-										description='Make payment for your desired appartment.'
+										description='Make payment for your desired apartment.'
 									/>
 									<Step
 										status='process'
 										title='Pack-in'
-										description='Locate and pack-in to your desired appartment.'
+										description='Locate and pack-in to your desired apartment.'
 									/>
 								</Steps>
 							</div>
