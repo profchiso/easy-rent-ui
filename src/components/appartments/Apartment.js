@@ -35,7 +35,7 @@ import "./Apartment.css";
 
 
 
-const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
+// const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
 
 let apartmentLocation = [];
 let lat = 6.616865;
