@@ -23,7 +23,7 @@ const Landing = () => {
 		setView(0);
 	};
 	return (
-		<div className='app-container'>
+		<main className='app-container'>
 			<div className='content-container'>
 				<div className=''>
 					<Link to='/' onClick={backToHome}>
@@ -39,7 +39,7 @@ const Landing = () => {
 				{view === 0 ? (
 					<Fragment>
 						<div className='content-section'>
-							<Title level={3}>Your rent made easy!!!</Title>
+							<Title level={3}>Apartment renting made simple and easy!!!</Title>
 							<Text strong className='heading'>
 								Get your apartment with these three simple
 								steps.
@@ -59,7 +59,7 @@ const Landing = () => {
 									<Step
 										status='process'
 										title='Pack-in'
-										description='Locate and pack-in to your desired apartment.'
+										description='Locate and pack-in to the apartment your paid for.'
 									/>
 								</Steps>
 							</div>
@@ -111,7 +111,7 @@ const Landing = () => {
 					<Fragment></Fragment>
 				)}
 			</div>
-		</div>
+		</main>
 	);
 };
 

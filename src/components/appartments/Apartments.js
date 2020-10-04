@@ -59,7 +59,7 @@ const Appartment = () => {
 		console.log(value);
 	};
 	return (
-		<div>
+		<main>
 			<Row>
 				<Col xs={24} md={5}>
 					<Affix>
@@ -1020,7 +1020,7 @@ const Appartment = () => {
 					</div>
 				</Col>
 			</Row>
-		</div>
+		</main>
 	);
 };
 export default Appartment;

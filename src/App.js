@@ -12,6 +12,7 @@ import Apartments from "./components/appartments/Apartments";
 import SignUp from "./components/sign-up/SignUp";
 import Support from "./components/support/Support";
 import Pricing from "./components/pricing/Pricing";
+import NotFound from "./components/common/not-found/NotFound"
 import store from "./store";
 
 //styles
@@ -33,6 +34,8 @@ const App = () => {
 					<Route exact path='/pricing' component={Pricing} />
 					<Route exact path='/apartment:id' component={Pricing} />
 					<Route exact path='/checkout:id' component={Pricing} />
+
+					<Route component={NotFound} />
 				</Switch>
 			</Router>
 		</Provider>
