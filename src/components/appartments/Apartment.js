@@ -1,4 +1,4 @@
-import React, { useState,Component } from "react";
+import React, { useState } from "react";
 
 //packages
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ import {
 import mobileMapStyle from '../map/mobileStyle.json';
 import moment from "moment"
 //components
-import { Row, Col, Menu, Select,Button } from "antd";
+import { Row, Col, Menu, Button } from "antd";
 
 import {
 	HomeOutlined,
@@ -32,8 +32,7 @@ import houseMarker from "../../img/rental.png"
 import "./Apartment.css";
 
 //constants
-const { Option } = Select;
-const { SubMenu } = Menu;
+
 
 
 const { InfoBox } = require('react-google-maps/lib/components/addons/InfoBox');
