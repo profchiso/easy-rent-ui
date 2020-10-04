@@ -43,46 +43,6 @@ let lat = 6.616865;
 let lng = 3.508072;
 const google = window.google
 
-const pickCenterlat = (center) => {
-	// lat = center.latitude;
-};
-const pickCenterlng = (center) => {
-	// lng = center.longitude;
-};
-
-const checkLocation = (reports) => {
-	// let hasLocation = reports.filter((report) => {
-	// 	return report.data.hasOwnProperty('gps') === true;
-	// });
-	// let hasLatLng = hasLocation.filter((report) => {
-	// 	return report.data.gps.latitude !== 0 && report.data.gps.longitude !== 0;
-	// });
-	// apartmentLocation = hasLatLng;
-};
-
-const dynamicMarker = (issue) => {
-	// let dateObj = new Date();
-	// let dateTimeNow = dateObj.toISOString();
-
-	// if (
-	// 	typeof issue.data.category === 'object'
-	// 		? issue.data.category.name.toLowerCase() === 'announcement'
-	// 		: issue.data.category.toLowerCase() === 'announcement'
-	// ) {
-	// 	return greenCircle;
-	// } else {
-	// 	if (moment(dateTimeNow).diff(moment(issue.created_date), 'hours') <= 24) {
-	// 		return redCircle;
-	// 	} else if (
-	// 		moment(dateTimeNow).diff(moment(issue.created_date), 'days') <= 7
-	// 	) {
-	// 		return orangeCircle;
-	// 	} else {
-	// 		return grayCircle;
-	// 	}
-    // }
-    return houseMarker
-};
 
 const MapMarker = () => {
 	 const [selectedIssue, setSelectedIssue] = useState();
@@ -198,38 +158,21 @@ const SingleApartment =()=> {
                         <div></div>
                     </section>
                     <div className='addon checkout-btn-container'>
-									<Button
-										htmlType='submit'
-										className='primary-button'
-										shape='round'
-										block
-									>
-										Checkout plan
-									</Button>
-								</div>
+                        <Button
+                            htmlType='submit'
+                            className='primary-button'
+                            shape='round'
+                            block
+                        >
+                            Checkout plan
+                        </Button>
+                    </div>
                 
                 </Col>
             </Row>
             <Row>
                 <Col xs={24} md={24}>
                 <div className='mapContainerDiv'>
-				{/* {this.props.issues.length > 0
-					? checkLocation(this.props.issues)
-					: checkLocation(this.props.apiData)}
-				{Object.entries(this.props.singleReport).length > 0
-					? pickCenterlat({
-							latitude: this.props.singleReport.data.gps.latitude,
-							longitude: this.props.singleReport.data.gps.longitude,
-					  })
-					: pickCenterlat({ latitude: 6.605874, longitude: 3.349149 })}
-
-				{Object.entries(this.props.singleReport).length > 0
-					? pickCenterlng({
-							latitude: this.props.singleReport.data.gps.latitude,
-							longitude: this.props.singleReport.data.gps.longitude,
-					  })
-					: pickCenterlng({ latitude: 6.605874, longitude: 3.349149 })} */}
-
 				<WrappedMap
 					googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAXjl3WWTUKDhCWNQgbLjzqkm6X8X7Vv24&libraries=places`}
                     loadingElement={<div style={{ height: `100%` }} />}

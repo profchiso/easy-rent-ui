@@ -469,6 +469,7 @@ const Apartment = () => {
 				</Col>
 				<Col xs={24} md={19} className='card-listing'>
 					<div className='appartment-listing-pane appartment-listing-wrapper'>
+						<Link to="/apartment/1">
 						<Card
 							hoverable
 							className='apartment'
@@ -510,6 +511,9 @@ const Apartment = () => {
 								</div>
 							</div>
 						</Card>
+						</Link>
+
+						<Link to="/apartment/2">
 						<Card
 							hoverable
 							className='apartment'
@@ -549,6 +553,8 @@ const Apartment = () => {
 								</div>
 							</div>
 						</Card>
+						</Link>
+						<Link to="/apartment/3">
 						<Card
 							hoverable
 							className='apartment'
@@ -588,6 +594,8 @@ const Apartment = () => {
 								</div>
 							</div>
 						</Card>
+						</Link>
+						<Link to="/apartment/4">
 						<Card
 							hoverable
 							className='apartment'
@@ -627,6 +635,7 @@ const Apartment = () => {
 								</div>
 							</div>
 						</Card>
+						</Link>
 						<Card
 							hoverable
 							className='apartment'
