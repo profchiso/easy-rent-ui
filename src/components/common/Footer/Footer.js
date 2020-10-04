@@ -15,7 +15,7 @@ const Footer = () => {
 		<div className='footer-container'>
 			<div className='footer-links'>
 				<div className='footer-link'>
-					<Link to='/privacy' className='footer-anchor'>
+					<Link to='/' className='footer-anchor'>
 						Privacy
 					</Link>
 				</div>

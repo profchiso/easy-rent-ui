@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 //npm packages
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //components
-import { Typography, Form, Row, Col, Input, Button } from 'antd';
-import logo from '../../img/rental.png';
+import { Typography, Form, Row, Col, Input, Button } from "antd";
+import logo from "../../img/rental.png";
 import {
 	MailOutlined,
 	UserOutlined,
 	PhoneOutlined,
 	InfoCircleOutlined,
-} from '@ant-design/icons';
-import Footer from '../common/Footer/Footer';
+} from "@ant-design/icons";
+import Footer from "../common/Footer/Footer";
 
 //styles
-import './Support.css';
+import "./Support.css";
 
 //constants
 const { Text, Title } = Typography;
@@ -57,37 +57,38 @@ const Support = () => {
 					<Form
 						name='contactform'
 						onFinish={onFinish}
-						onFinishFailed={onFinishFailed}
-					>
+						onFinishFailed={onFinishFailed}>
 						<div className='row-separator'>
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={12} className='support-column'>
 									<Form.Item
-										rules={[{ required: true, type: 'text' }]}
-										name='name'
-									>
+										rules={[
+											{ required: true, type: "text" },
+										]}
+										name='name'>
 										<Input
 											placeholder='John Doe'
 											className='input-box'
 											size='middle'
 											prefix={<UserOutlined />}
 											allowClear={true}
-											onChange={''}
+											onChange={""}
 										/>
 									</Form.Item>
 								</Col>
 								<Col xs={24} md={12} className=''>
 									<Form.Item
-										rules={[{ required: true, type: 'email' }]}
-										name='email'
-									>
+										rules={[
+											{ required: true, type: "email" },
+										]}
+										name='email'>
 										<Input
 											placeholder='johndoe@mail.com'
 											className='input-box'
 											size='middle'
 											prefix={<MailOutlined />}
 											allowClear={true}
-											onChange={''}
+											onChange={""}
 										/>
 									</Form.Item>
 								</Col>
@@ -97,16 +98,17 @@ const Support = () => {
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={24}>
 									<Form.Item
-										rules={[{ required: true, type: 'text' }]}
-										name='subject'
-									>
+										rules={[
+											{ required: true, type: "text" },
+										]}
+										name='subject'>
 										<Input
 											placeholder='Subject'
 											className='input-box subject-input'
 											size='middle'
 											prefix={<InfoCircleOutlined />}
 											allowClear={true}
-											onChange={''}
+											onChange={""}
 										/>
 									</Form.Item>
 								</Col>
@@ -116,16 +118,17 @@ const Support = () => {
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={24}>
 									<Form.Item
-										rules={[{ required: true, type: 'text' }]}
-										name='message'
-									>
+										rules={[
+											{ required: true, type: "text" },
+										]}
+										name='message'>
 										<Input.TextArea
 											placeholder='Your message'
 											className='input-box subject-input'
 											size='middle'
 											prefix={<MailOutlined />}
 											allowClear={true}
-											onChange={''}
+											onChange={""}
 											rows={4}
 										/>
 									</Form.Item>
@@ -140,8 +143,7 @@ const Support = () => {
 									shape='round'
 									size='middle'
 									onClick={activateLoading}
-									loading={status}
-								>
+									loading={status}>
 									Send
 								</Button>
 							</Form.Item>

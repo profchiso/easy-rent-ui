@@ -80,7 +80,7 @@ const Landing = () => {
 							<Row gutter={{ xs: 8, sm: 16, md: 24 }}>
 								<Col xs={24} md={12}>
 									<div className=' button-container '>
-										<Link to='/appartments'>
+										<Link to='/apartments'>
 											<Button
 												className='primary-button'
 												shape='round'

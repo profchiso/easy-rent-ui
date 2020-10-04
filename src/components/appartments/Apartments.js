@@ -19,7 +19,7 @@ import house2 from "../../img/house2.jpeg";
 import Footer from "../common/Footer/Footer";
 
 //styles
-import "./Appartment.css";
+import "./Apartment.css";
 
 //constants
 const { Option } = Select;
