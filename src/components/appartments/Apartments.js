@@ -24,7 +24,7 @@ import "./Apartment.css";
 //constants
 const { Option } = Select;
 
-const Appartment = () => {
+const Apartment = () => {
 	const [drawerVisible, setDrawerVisible] = useState(false);
 	const [selectedState, setSelectedState] = useState("abia");
 	const [selectedLGA, setSelectedLGA] = useState();
@@ -1023,4 +1023,4 @@ const Appartment = () => {
 		</main>
 	);
 };
-export default Appartment;
+export default Apartment;

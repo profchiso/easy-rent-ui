@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import Landing from "./components/Landing/Landing";
 import Dashboard from "./components/private/dashboard/Dashboard";
 import Apartments from "./components/appartments/Apartments";
+import Apartment from "./components/appartments/Apartment";
 import SignUp from "./components/sign-up/SignUp";
 import Support from "./components/support/Support";
 import Pricing from "./components/pricing/Pricing";
@@ -32,8 +33,8 @@ const App = () => {
 					<Route exact path='/sign-up' component={SignUp} />
 					<Route exact path='/support' component={Support} />
 					<Route exact path='/pricing' component={Pricing} />
-					<Route exact path='/apartment:id' component={Pricing} />
-					<Route exact path='/checkout:id' component={Pricing} />
+					<Route exact path='/apartment/:id' component={Apartment} />
+					<Route exact path='/checkout/:id' component={Pricing} />
 
 					<Route component={NotFound} />
 				</Switch>

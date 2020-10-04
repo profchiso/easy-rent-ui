@@ -31,7 +31,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className='copyright'>
-				&copy; GiftedBrain tech Apps {new Date().getFullYear()}
+				&copy; GiftedBrain tech Apps 2019 - {new Date().getFullYear()}
 			</div>
 		</div>
 	);
